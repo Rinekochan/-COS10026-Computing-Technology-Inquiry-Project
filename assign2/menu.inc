@@ -1,19 +1,19 @@
 <?php
-
-    echo'<input type = "checkbox" id = "HamburgerMenuBar">';
-    echo'<div>';
-    echo    '<!--This is the company logo. The logo is designed by Viet Hoang Pham.-->';
-    echo    '<a href = "index.php"><img src = "./images/Logo_name.png" alt = "Company Logo"> </a>';
-    echo    '<label for = "HamburgerMenuBar">';
-    echo        '<span class = "content">\'</span>';
-    echo        '<span class = "Line TopLine"></span>';
-    echo        '<span class = "Line MiddleLine"></span>';
-    echo        '<span class = "Line BottomLine"></span>';
-    echo    '</label> ';
-    echo'</div>';
-    echo'<nav>';
-    echo    '<ul>';
-    echo        '<!--class:active indicate the website the user currently visits -->';
+    echo '
+    <input type = "checkbox" id = "HamburgerMenuBar">
+    <div>
+        <!--This is the company logo. The logo is designed by Viet Hoang Pham.-->
+        <a href = "index.php"><img src = "./images/Logo_name.png" alt = "Company Logo"> </a>
+        <label for = "HamburgerMenuBar">
+            <span class = "content">\'</span>
+            <span class = "Line TopLine"></span>
+            <span class = "Line MiddleLine"></span>
+            <span class = "Line BottomLine"></span>
+        </label>
+    </div>
+    <nav>
+        <ul>
+        <!--class:active indicate the website the user currently visits -->';
                 $request_uri = $_SERVER['REQUEST_URI'];
                 
                 if($request_uri == '/assign2/index.php'){
@@ -41,7 +41,7 @@
                 } else { 
         echo        '<li><a href = "enhancements.php">Enhancements</a></li>';
                 }
-    echo        '<li><a href = "mailto:104506968@student.swin.edu.au">Contact</a></li>';
-    echo    '</ul>';
-    echo'</nav>';
+        echo    '<li><a href = "mailto:104506968@student.swin.edu.au">Contact</a></li>
+        </ul>
+    </nav>';
 ?>
