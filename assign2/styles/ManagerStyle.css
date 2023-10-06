@@ -1,0 +1,304 @@
+/*Fonts using in this website */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@700&family=PT+Sans:wght@700&family=Pacifico&family=Poppins:wght@400;700&display=swap');
+/* Styling the color when the user want to highlight a text */
+::selection{
+    background-color: rgb(253, 230, 197);
+    color: black;
+}
+/* Set the default style of elements*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    scroll-behavior: smooth;
+}
+h1{
+    font-family: 'Poppins', serif;
+} 
+h2, h3, h4, a{
+    font-family: 'Noto Sans', sans-serif;
+    color: black;
+    line-height: 1.5;
+}
+p{
+    font-family: 'Noto Sans', sans-serif;
+    color: #777;
+    line-height: 1.6;
+}
+body{
+    width: 100%;
+    max-width: 100%;
+}
+/* The background of index, jobs and about pages */
+#MainBackground{
+    background-color: #f1f1f1;
+}
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* Developer: Viet Hoang Pham. This is manage page CSS style */
+nav{
+    position: fixed;
+    display: flex;
+    width: 225px; 
+    height: 100%;
+    background-color:#272727;
+    flex-direction: column;
+    z-index: 3;
+    border-right: 5px solid rgb(182, 164, 164);
+}
+nav > a{
+    margin: 10px 0;
+    height: 50px;
+    text-align: center;
+}
+nav > a img{
+    width: 140px;
+}
+nav > h1{
+    font-size: 24px;
+    color: #fff;
+    background-color: #005494;
+    text-align: center;
+    padding: 12.5px 0;
+}
+nav ul, nav ul li, nav ul li a{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.menuicon{
+    font-size: 32px;
+}
+nav ul li a{
+    color: #fff;
+    font-family: 'Poppins', serif;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.23s ease;
+    padding: 15px;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Making hover effect when hover into a menu link */
+nav ul li a:hover {
+    background: #faebd7;
+    color: black;
+}
+/* Styling the current page box */
+nav ul li a#active {
+    background-color: #0087ee;
+    color: black;
+}
+nav button{
+    margin: 0 auto; 
+    margin-top: auto;
+    margin-bottom: 7.5%;
+    background-color: red;
+    border: none;
+    width: 85%;
+    color: #fff;
+    font-family: 'Poppins', serif;
+    font-weight: bold;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 10px 0;
+    cursor: pointer;
+}
+header{
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+    height: 70px;
+    background-color: white;
+    align-items: center;
+    z-index: 2;
+    box-shadow: 3px 2px 2px rgb(205, 205, 205);
+}
+header p{
+    font-size: 18px;
+    font-weight: 600;
+    color: #0068b8;
+    margin-right: 20px;
+}
+header > button{
+    display: flex;
+    align-items: center;
+    background-color: red;
+    border: none;
+    color: #fff;
+    font-family: 'Poppins', serif;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 0 10px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+main{
+    padding: 100px 40px 30px 260px;
+}
+#DisplayTableData{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+    border-radius: 15px;
+    height: auto;
+    box-shadow: 4px 3px 3px rgb(205, 205, 205);
+}
+#DisplayTableData form{
+    display: flex;
+    justify-content: space-evenly;
+}
+#DisplayTableData select{
+    text-align: center;
+    background-color: white;
+}
+select, input, label, button{
+    font-family: 'Noto Sans', sans-serif;
+    color: black;
+    line-height: 1.5;
+    border-radius: 5px;
+    margin: 0 3px;
+}
+input::placeholder{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
+}
+#DisplayTableData form{
+    padding: 15px;
+}
+#DisplayTableData form button{
+    height: 50px;
+    background-color:#0961a5;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+}
+#deleteJobReference label{
+    font-size: 16px;
+    margin-right: 7px;
+}
+#DisplayTableData select{
+    border: 2px solid rgb(128, 128, 128);
+    background-color: rgb(244, 250, 255);
+    font-size: 16px;
+    height: 50px;
+}
+#deleteJobReference select{
+    width: 100px;
+}
+#deleteJobReference button{
+    width: 160px;
+}
+#searchQuery select{
+    width: 150px;
+}
+#searchQuery button{
+    width: 100px;
+}
+#searchQuery label{
+    display: none;
+}
+#searchQuery input{
+    height: 50px;
+    width: 200px;
+    border: 2px solid rgb(205, 205, 205);
+    padding: 10px;
+    font-size: 14px;
+}
+#DisplayTableData th, #DisplayTableData td{
+    font-family: 'Noto Sans', sans-serif;
+}
+#tableheader{
+    background-color: #272727;
+    border: none;
+}
+table{
+    border-collapse: collapse;
+}
+table #tableheader th button{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    border: none;
+    background-color: transparent;
+}
+table #tableheader th{
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    border: none;
+    padding: 10px 5px;
+    background-color: transparent;
+}
+#DisplayTableData table tr{
+    border-radius: 20px;
+}
+#DisplayTableData table tr td{
+    font-size: 16px;
+    border-bottom: 2px solid rgb(205, 205, 205);
+    padding: 10px 3px;
+    text-align: center;
+}
+.mainText{
+    color: black;
+    font-size: 16px;
+}
+.subText{
+    color: #00447b;
+    font-size: 14px;
+}
+.deleteButton{
+    font-size: 24px;
+    color: red;
+}
+.editButton{
+    font-size: 24px;
+    color: #077ad1;
+}
+.statusNew, .statusCurrent, .statusFinal{
+    display: flex;
+    flex-direction: row;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: 700;
+    font-size: 18px;
+    color: white;
+}
+.statusNew{
+    background-color: rgb(185, 255, 185);
+    color: rgb(0, 122, 0);
+}
+.statusCurrent{
+    background-color: rgb(255, 255, 167);
+    color: rgb(119, 101, 0);
+}
+.statusFinal{
+    background-color: rgb(181, 220, 255);
+    color: rgb(0, 85, 159);
+}
+#pagination{
+    margin: 30px auto;
+}
+#pagination a{
+    font-family: 'Poppins', serif;
+    font-weight: 800;
+    text-decoration: none;
+    padding: 6.5px 17.5px;
+    color: white;
+    background-color: #3e3e3e;
+    border: 2px solid black;
+}

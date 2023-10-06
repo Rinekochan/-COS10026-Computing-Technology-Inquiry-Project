@@ -1,0 +1,1424 @@
+/*Fonts using in this website */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@700&family=PT+Sans:wght@700&family=Pacifico&family=Poppins:wght@400;700&display=swap');
+/* Styling the color when the user want to highlight a text */
+::selection{
+    background-color: rgb(253, 230, 197);
+    color: black;
+}
+/* Set the default style of elements*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    scroll-behavior: smooth;
+}
+h1{
+    font-family: 'Poppins', serif;
+} 
+h2, h3, h4, a{
+    font-family: 'Noto Sans', sans-serif;
+    color: black;
+    line-height: 1.5;
+}
+p{
+    font-family: 'Noto Sans', sans-serif;
+    color: #777;
+    line-height: 1.6;
+}
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* Developer: Viet Hoang Pham. This is Navigation Menu style*/
+#MenuBar, #MenuBar img, nav ul li, nav ul li a{
+    align-items: center;
+    text-align: center;
+    display: inline-flex;
+}
+/* Make the menu fixed in the top position */
+#MenuBar{
+    position: fixed;
+    background-color: #272727;
+    width: 100%;
+    z-index: 2;
+    justify-content: flex-start;
+    overflow: hidden;
+    border-bottom: 5px solid rgb(182, 164, 164);
+}
+#MenuBar div{
+    display: flex;
+    justify-content: space-between;
+}
+/* Styling the elements in the menu bar */
+/* Since I am using the flexbox, I don't need to use float */
+#MenuBar img{
+    margin-left: 20%;
+    height: auto;
+    width: 40%;
+}
+/* Hamburger Bar is not displayed on PC/Laptop Screen */
+.content{
+    display: none;
+}
+.Line{
+    display: none;
+}
+#HamburgerMenuBar{
+    display: none;
+}
+#MenuBar label{
+    display: none;
+}
+/* Eliminate the list index */
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+nav ul{
+    list-style: none;
+}
+nav ul li a{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 3px;
+    color: #fff;
+    font-family: 'Poppins', serif;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 21.8px;
+    transition: all 0.23s ease;
+    padding: 9px 13px;
+    text-decoration: none;
+}
+/* Making hover effect when hover into a menu link */
+nav ul li a:hover {
+    background: #faebd7;
+    color: black;
+}
+/* Styling the current page box */
+nav ul li a#active {
+    background-color: #0087ee;
+    color: black;
+}
+/*End of the navigation menu style*/
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* Developer: Viet Hoang Pham. Scroll up button */
+/* Styling the Scroll Up Button at the bottom right of the screen */
+#TopIcon{
+    position: fixed;
+    background: #1893f0;
+    border-radius: 100px;
+    z-index: 3;
+    border: 2px solid #53aef4;
+    bottom: 20px;
+    right: 20px;
+    transition: all 80ms ease-in;
+    padding: 3px 18px;
+    opacity: 0.2;
+    cursor: pointer;
+    text-decoration: none;
+} 
+#TopIcon p{
+    font-size: 32px;
+    font-weight: 560;
+    font-family: 'Arial', serif;
+    color: white;
+    text-decoration: none;
+    width: 100%;
+} 
+/* Scroll Up Button Hover Animation */
+#TopIcon:hover{
+    transform: scale(1.1);
+    opacity: 0.75;
+}
+/* End of scroll up button */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* Developer: Viet Hoang Pham. This is Index Page style*/
+body{
+    width: 100%;
+    max-width: 100%;
+}
+/* The background of index, jobs and about pages */
+#MainBackground{
+    background-color: #ecf4ff;
+}
+/* The background of Apply page */
+#ApplyMainBackground{
+    background-image: url("images/black_background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    height: auto;
+    width: 100vw;
+}
+/* Preparing the #IndexHeaderPage container */
+#IndexHeaderPage{
+    position: relative;
+    background-color: transparent;
+    width: 100%;
+}
+#IndexHeaderPage > header{
+    position: relative;
+    background-color: transparent;
+    width: 100%;
+}
+/*  Positioning the container and apply flexbox to style content on column layout*/
+/*  The picture is downloaded from https://www.jll.fi/fi/trendit-ja-tutkimukset/tyopaikka/bringing-privacy-to-the-open-plan-office
+    Designed by Viet Hoang Pham 
+*/
+#IndexHeaderPage > header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-image: url("images/Introduction_images.png");
+    background-color: darkblue;
+    background-repeat: no-repeat;
+    background-position: center 0;
+    background-size: cover;
+}
+/* Styling the header of #IndexHeaderPage */
+#IndexHeaderPage > header h1, #IndexHeaderPage > header h2, #IndexHeaderPage > header p{
+    color: white;
+    width: 70%;
+}
+#IndexHeaderPage > header h1{
+    padding-top: 8%;
+    font-size: 48px;
+    font-weight: 700;
+    text-decoration: underline;
+}
+#IndexHeaderPage > header h2{
+    font-size: 40px;
+    font-weight: 600;
+}
+#IndexHeaderPage > header p{
+    margin-top: 3%;
+    font-size: 32px;
+    font-weight: 400;
+}
+/* Styling the Youtube button*/
+#IndexHeaderPage > header  > a{
+    font-size: 40px;
+    font-weight: 800;
+    text-decoration: none;
+    color: red;
+    border: 2px solid red;
+    border-radius: 18px;
+    padding: 10px 45px;
+    margin: 30px 0px;
+    transition-duration: 0.3s;
+}
+/* Hover effect on Youtube button */
+#IndexHeaderPage > header > a:hover{
+    color: white;
+    background: red;
+    transform: scale(1.1);
+    transition-duration: 0.3s;
+}
+/* Styling the containers of two box under the main content */
+#IndexHeaderPage > div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+/* Positioning the box */
+#IndexHeaderPage > div article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #32a5fd;
+    border: none;
+    width: 475px;
+    height: 180px;
+    padding: 30px 10px;
+    border-radius: 20px;
+    margin-top: -30px;
+    transition-duration: 0.5s;
+    cursor: pointer
+}
+/* Coloring the first box */
+#IndexHeaderPage > div article:first-child{
+    background-color: gold;
+}
+/* Styling the box header */
+#IndexHeaderPage > div article > h3{
+    width: 100%;
+    font-size: 32px;
+    margin-top: 40px;
+    border-right: 2px solid transparent;
+    transition-duration: 0.5s;
+}
+/* Making the paragraph disappear before being hovered */
+#IndexHeaderPage > div > article > p{
+    display: none;
+    opacity: 0;
+    transition-duration: 1s;
+}
+/* Box Hover Animation */
+#IndexHeaderPage > div article:hover{
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+}
+/* Pushing header up animation */
+#IndexHeaderPage > div article:hover h3{
+    font-size: 24px;
+    transform: translateY(-40px);
+    transition-duration: 0.5s;
+    overflow: visible;
+}       
+/* Paragraph appear animation */
+#IndexHeaderPage > div article:hover p{
+    font-size: 17px;
+    color: black;
+    margin-top: 14px;
+    opacity: 1;
+    display: block;
+    transform: translateY(-40px);
+}
+/* End of Header style */
+
+/* Start of Upper Body Index Style */
+/* Positioning #UpperBodyIndex container and apply flexbox*/
+#UpperBodyIndex{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 5%;
+    width: 100%;
+}
+#UpperBodyIndex > header{
+    width: auto;
+}
+/* Styling the #UpperBodyIndex header with typewriting effect */
+#UpperBodyIndex > header h2{
+    font-size: 50px;
+    width: 0%;
+    overflow: hidden;
+    border-right: 2px solid transparent;
+    white-space: nowrap;
+    animation: 
+    typing_head_body_index 2s steps(20, end) forwards, blink 0.25s 10
+}
+/* Blinking Animation */
+@keyframes blink {
+    to {
+      border-color: black;
+    }
+}
+/* Typewriting Animation */
+@keyframes typing_head_body_index{
+    from{width: 0%; }
+    to {width: 100%; }
+}
+/* Import Custom Horizontal Line */
+#UpperBodyIndex hr{
+    background: url("images/HorizontalLine1.png") no-repeat center;
+    background-size: contain;
+    height: 100px;
+    width: 80%;
+    border: none;
+}
+/* Positioning the container of three boxs and apply flexbox*/
+#UpperBodyIndex div{
+    display: flex;
+    flex-direction: row;
+    margin-top: 3%;
+    width: 80%;
+}
+/* Styling the boxs */
+#UpperBodyIndex a{
+    border: none;
+    border-radius: 30px;
+    background-color: #005494;
+    margin: auto;
+    padding: 30px;
+    transition-duration: 0.5s;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 2%;
+    width: auto;
+}
+/* First box color */
+#UpperBodyIndex a:first-child{
+    background-color: #272727;
+}
+/* Third box color */
+#UpperBodyIndex a:last-child{
+    background-color: gold;
+}
+/* Hover box effect */
+#UpperBodyIndex a:hover{
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+}
+#UpperBodyIndex a:last-child h3{
+    color: black;
+}
+/* Styling the header and paragraph inside the box */
+#UpperBodyIndex a h3{
+    font-size: 27px;
+    font-weight: 800;
+    text-decoration: none;
+    margin-bottom: 15px;
+    color: white;
+}
+#UpperBodyIndex a p{
+    font-size: 22px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 10px;
+    color: white;
+}
+#UpperBodyIndex a:last-child p{
+    color: black;
+}
+/* End of Upper Body Index style */
+
+/* Body Index style  */
+
+/* Positioning the #BodyIndex container and apply flexbox */
+#BodyIndex{
+    display: flex;
+    flex-direction: row;
+    background-color: #272727;
+    height: auto;
+    margin-top: 100px;
+}
+/* Since the user can click on label or checkbox to select, this is the core to apply checkbox technique */
+#BodyIndex header{
+    text-align: center;
+    margin: auto;
+    transition-duration: 0.5s;
+}
+#BodyIndex header label{
+    display: flex;
+    flex-direction: column;
+    width: auto; 
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    padding: 175px 100px;
+}
+/* Checkbox mustn't be displayed visually */
+#BodyIndex #AnimationBodyIndex{
+    display: none;
+}
+
+/* Header Style */
+#BodyIndexHeader{
+    font-size: 76px;
+    font-weight: 1000;
+    text-transform: uppercase;
+    transition-duration: 0.5s;
+    margin: auto;
+    color: #1893f0;
+}
+/* Styling different color text */
+.EmHeadingIndex{
+    color:white;
+}
+/* Text Underline Style */
+.UlineIndex{
+    font-size: 20px;
+    text-decoration: underline;
+    color: #1893f0;
+}
+#AnimationBodyIndex:checked + header label{
+    padding: 175px 0px;
+}
+/* Hide the "Find out more" text */
+#AnimationBodyIndex:checked + header label .UlineIndex{
+    font-size: 0px;
+}
+/* Shrink the Header */
+#AnimationBodyIndex:checked + header label .RowStyle{
+    font-size: 56px;
+    padding: 20px;
+    transition-duration: 0.5s;
+}
+/* Set width, text-size and opacity to 0 to hide before the checkbox is checked*/
+#ContainerBodyIndex{
+    display: flex;
+    flex-direction: column;
+    width: 0;
+    opacity: 0;
+    position: absolute; 
+    margin: auto;
+    padding: 0px;
+}
+/* Set width, text-size and opacity to 0 to hide before the checkbox is checked*/
+#ContainerBodyIndex article hr{
+    margin-top: 10px;
+    width: 70px;
+    height: 4px;
+    background-color: rgb(182, 164, 164);
+    display: none;
+    border: none;
+    transition-duration: 0.5s;
+}
+/* Set the text-size to 0 to hide */
+#ContainerBodyIndex article h3{
+    font-size: 0;
+    text-transform: uppercase;
+    color: #1893f0;
+    font-weight: 700;
+    transition-duration: 0.5s;
+}
+/* Set the text-size to 0 to hide */
+#ContainerBodyIndex article p{
+    font-size: 0;
+    color: white;
+    font-weight: 500;
+    margin-top: 1%;
+    transition-duration: 0.5s;
+}
+/* Styles of the #ContainerBodyIndex container after the check button is triggered*/
+#AnimationBodyIndex:checked ~ #ContainerBodyIndex{
+    width: auto;
+    opacity: 1;
+    transition-duration: 0.5s;
+    position: relative;
+    padding: 10px 0px;
+}
+#AnimationBodyIndex:checked ~ #ContainerBodyIndex article{
+    border-radius: 20px;
+    padding: 10px;
+    transition-duration: 0.5s;
+    margin: 10px;
+    margin-right: 50px;
+}
+#AnimationBodyIndex:checked ~ #ContainerBodyIndex h3{
+    font-size: 26px;
+    transition-duration: 0.5s;
+}
+#AnimationBodyIndex:checked ~ #ContainerBodyIndex hr{
+    display: block;
+    transition-duration: 0.5s;
+}
+#AnimationBodyIndex:checked ~ #ContainerBodyIndex p{
+    font-size: 20px;
+    transition-duration: 0.5s;
+}
+/*End of Body Style*/
+
+/* Start of Bottom Body Style */
+
+/* Positioning the #LowerBodyIndex container and apply flexbox*/
+#LowerBodyIndex{
+    display: flex;
+    margin: auto;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 0%;
+}
+/* Using custom Horizontal Line */
+#LowerBodyIndex hr{
+    background: url("images/HorizontalLine2.png") no-repeat center;
+    background-size: contain;
+    height: 50px;
+    width: 80%;
+    border: none;
+    margin: 0px auto;
+}
+/* Styling the #LowerBodyIndex header and make it center  */
+#LowerBodyIndex h2{
+    font-size: 48px;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 4%;
+}
+/* Styling the #Collaboration container */
+#Collaboration{
+    text-align: center;
+}
+#Collaboration img{
+    margin: 50px auto;
+    display: inline-block;
+    height: 100px;
+}
+/* Styling and Coloring the Location Container */
+#LocationIndex{
+    width: 100%;
+    background-color: #0068b8;
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    height: 10%;
+}
+/* Load the picture and float it to right */
+#LocationIndex img{
+    width: 50%;
+    margin: 0;
+    background-size: contain;
+}
+/* Defining the paragraph section styles */
+#LocationIndex section{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+/* Styling the #LocationIndex header and paragraph */
+#LocationIndex h2, #LocationIndex p{
+    display: block;
+    color: white;
+    margin: 0;
+}
+#LocationIndex h2{
+    margin-top: 90px;
+}
+#LocationIndex p{
+    font-size: 28px;
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 120px;
+    margin-right: 100px;
+}
+/* Centering the container of flag */
+#LocationIndex section > div{
+    margin: auto;
+    margin-top: 50px;
+}
+/* Positioning the flag circles */
+#LocationIndex section > div a{
+    display: flex;
+    flex-direction: row;
+}
+#LocationIndex section > div img{
+    height: 75px;
+    width: auto;
+    margin-left: 5px;
+}
+/* End of Index Page styles */
+/* ------------------------------------------------------------ */
+/* ------------------------------------------------------------ */
+/* ------------------------------------------------------------ */
+/* Developer: Humayra Jahan. This is Jobs Page Style */
+/* Styling the header of the page */
+/* Apply padding because the menu is a fixed container */
+#HeaderJob{
+    padding-top: 150px;
+    text-align: center;
+    color: #333333;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+}
+/* Styling the body of the page */
+#JobsBody {
+    padding: 40px 120px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+/* Styling the header of the body of the page */
+#JobsBody h2 {
+    color: #555;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Poppins', serif;
+    clear: both;
+}
+#JobsBody p {
+    color: black;
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
+#JobsBody ul {
+    list-style-type: disc;
+}
+#JobsBody li {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    margin-left: 20px;
+}
+/* Floating the header part to the left */
+#JobsBody > header{
+    width: 70%;
+    height: auto;
+    float: left;
+}
+/* Floating the aside part to the right */
+#JobsBody > aside{
+    width: 25%;
+    height: auto;
+    float: right;
+}
+#JobsBody > aside > p{
+    width: 100%;
+    float: right;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: white;
+    font-size: 21px;
+}
+/* Styling the job-listing container */
+.job-listing {
+    border: 1px solid #ddd;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    background-color: #ffffff;
+    border-radius: 5px;
+    clear: both;
+}
+/* Styling the contents of the job-listing container */
+.job-listing h3 {
+    color: #0068b8;
+    margin-bottom: 0.5rem;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 2rem;
+  }
+.job-listing h4 {
+    color: #555;
+    margin-bottom: 0.3rem;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1.5rem;
+}
+.job-listing p {
+    color: #777;
+    margin-bottom: 1rem;
+  }
+/* Styling the table inside .job-listing */
+.job-listing table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    margin-bottom: 20px;
+}
+/* Styling the table data and head */
+.job-listing tr td {
+    padding: 0.5rem;
+    border: 1px solid #d5d5d5;
+    font-size: 1rem;
+    font-family: 'Poppins', serif;
+
+}
+.job-listing tr th{
+    padding: 0.7rem;
+    border: 1px solid #d5d5d5;
+    font-family: 'Poppins', serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    width: 300px;
+}
+/* Styling the apply button */
+.apply-button{
+    background-color: #115685;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition-duration: 0.1s;
+}
+.apply-button:hover{
+    background-color: #494949;
+    color: #82cdff;
+    transition-duration: 0.1s;
+}
+/* End of Job Page styles */
+
+/* ------------------------------------------------------------ */
+/* ------------------------------------------------------------ */
+/* ------------------------------------------------------------ */
+/* Developer: Siradanai Inchansuk, This is the css code for the form in the apply page */
+/* creating the margin and padding between elements in form*/
+form {
+    margin: auto;
+    padding: 1rem;
+}
+/* displaying the text, input box, valid and invalid state and */
+.formBox {
+    display: grid;
+    grid-template-columns: 150px 400px 0px;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+/* css to style the label text in the apply page HTML*/
+.center label {
+    font-size: 1rem;
+    padding: 0.2rem 0;
+    font-weight: 300;
+    color: black;
+    text-align: right;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+}
+/* css to style placeholder text, the text in the input box, the options and button in the apply page HTML*/
+.center select,
+.center input,
+.center button,
+.center option,
+.center textarea {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #555;
+    padding: 0.2rem 0.5rem;
+    margin: 0 1rem 0 0;
+}
+/* Styles of asterisks */
+.asterisks{
+    color: red;
+}
+/* CSS to center the whole Application in HTML*/
+.center{
+    margin: auto;
+    background: #f3f7fd;
+    width: 800px;
+    padding: 20px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    top: 100px;
+}
+/* CSS to shift the text on the fieldset */
+.center fieldset{
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+/* CSS for Deg label */
+#formBoxLabelDeg{
+    padding: 0.2rem 0.5rem;
+    margin: 0 2rem 0 3rem;
+    font-weight: bold;
+}
+/* H1 title design for Application page */
+#HeaderApply{
+    text-align: center;
+    color: #333333;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+/* Padding and margin between checkboxes */
+.checkboxApply{
+    padding: 0.2rem 0.5rem;
+    margin: 0 4rem 0 3rem;
+}
+/* Displaying radio buttons and text in a grid format to fix in the same line with adequate spaces */
+#radioApply{
+    display: grid;
+    grid-template-columns: 150px 50px 40px 50px 40px 50px 50px;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+/* Changing design of legend in fieldset */
+.center fieldset > legend{
+    font-weight: bold;
+    margin-left: 2rem;  
+    color: currentColor;
+    padding: 0 1rem;
+    font-family: 'Noto Sans', sans-serif;
+}
+/* Makes the fieldset blue */
+.purpleApply{
+    border-color: rebeccapurple;
+    color: rebeccapurple;
+}
+/* Makes the fieldset blue */
+.blueApply{
+    border-color: rgb(24, 69, 251);
+    color: rgb(24, 69, 251);
+}
+/* Makes the fieldset green */
+.greenApply{
+    border-color: #01821d;
+    color: #01821d;
+}
+/* Makes the fieldset red */
+.redApply{
+    border-color: #B90E0A;
+    color: #B90E0A;
+}
+/* CSS for padding and margin of Experience Label */
+#formBoxLabelExperience{
+    padding: 0.2rem 0.5rem;
+    margin: 0 2rem 0 3rem;
+    font-weight: bold;
+}
+/* input box inside formBox div design */
+.formBox input{
+    height: 35px;
+    padding-left: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+/* This is displays the X and tick based on whether data has a valid pattern in input box */
+.formBox input + span{
+    position: relative;
+}
+.formBox input + span::before{
+    position:relative;
+    right: -20px;
+    top: 5px;
+}
+.formBox input:invalid{
+    border: 2px solid red;
+}
+.formBox input:focus:invalid + span::before{
+    content: "✖";
+    color: red;
+}
+.formBox input:valid + span::before {
+    content: "✓";
+    color: green;
+}
+.formBox input:valid{
+    border: 2px solid green;
+}
+/* Displays the design in top left of fieldset (The square)*/
+.center fieldset::before{
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    top: -0.7rem;
+    left: 0;
+    border-width: 1rem;
+    border-color: currentColor;
+    border-style: solid;
+}
+/* Design of radio */
+.center input[type=radio] {
+    border: 0px;
+    width: 80%;
+    height: 1em;
+    margin-top: 7px
+}
+/* Design of apply box */
+.btnApply{
+    width: 30%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    cursor: pointer;
+    color:#333;
+    font-weight: 600;
+    font-family: 'Noto Sans', sans-serif;
+    line-height: 1.6;
+    right: -30px;
+}
+/* Design of hovering over apply box to change colours */
+.btnApply:hover{
+    background: rgb(222, 222, 222);
+    color: black;
+    box-shadow: rgba(0, 0, 0, .2) 0 2px 4px -1px, rgba(0, 0, 0, .14) 0 4px 5px 0, rgba(0, 0, 0, .12) 0 1px 10px 0;
+}
+/* doesn't allow user to resize description box */
+#description{
+    resize: none;
+}
+/* Centers H1Apply */
+#h1Apply{
+    text-align: center;
+}
+/* Makes font bold */
+.center .bold label{
+    font-weight: bold;
+}
+/* CSS for Deg level label */
+#formBoxLabelDegLevel{
+    padding: 0.2rem 0.5rem;
+    margin: 0 2rem 0 3rem;
+    font-weight: bold;
+}
+/* end of Apply CSS */
+/* ------------------------------------------------------------ */
+/* ------------------------------------------------------------ */
+/* ------------------------------------------------------------ */
+/* Developer: Parthasarathi Jayaprakash. This is About Page Style */
+/* Setting the default definition styles */
+dl, dt, dd{
+    margin: 0;
+    padding: 0;
+}
+/* Apply padding because the menu is a fixed container */
+/* Styling the #GroupNameAbout container */
+#AboutHeader{
+    padding-top: 150px;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-family: 'Poppins', serif;
+    font-size: 3rem;
+    color:#333333;
+}
+#GroupNameAbout{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+#GroupNameAbout figure{
+    float: right;
+    margin-right: 50px;
+    width: auto;
+    height: auto;
+}
+/* Styling the #GroupNameAbout photo */
+#GroupPhotoAbout{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    margin: auto;
+    padding: 3px;
+    border: 3px solid black;
+    background-color: grey;
+    display: block;
+    width: 470px;
+    height: auto;
+}
+/* Styling the #GroupNameAbout figcaption */
+#GroupNameAbout figcaption{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+    font-family: "Poppins", serif;
+}
+/* Styling the definition list */
+#GroupNameAbout dl{
+    overflow: hidden;
+    width: 50%;
+    position: relative;
+    float: left;
+    margin-top: 170px;
+    border: 2px solid #272727;
+    border-radius:  20px;
+    margin-left: 50px;
+    background-color: white;
+    padding: 10px 30px;
+}
+#GroupNameAbout dt, dd{
+    color: black;
+    float: left;
+    font-family: 'Noto Sans', sans-serif;
+    padding: 0px;
+}
+#GroupNameAbout dt{
+    width: 30%;
+    float: left;
+    font-weight: 600;
+    font-size: 1.2em; 
+    clear: left;
+}
+#GroupNameAbout dd{
+    width: 60%;
+    float: right;
+    font-weight: 400;
+    font-size: 1.2em;
+    clear: right;
+}
+/* Preparing the DemographicAbout container */
+#DemographicAbout{
+    position: relative;
+    width: 100%;
+    display: block;
+}
+.MemberImageSize{
+    width: 325px;
+    height: auto;
+}
+/* Positioning Demographic Class */
+.memberInfo {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    padding: 40px;
+    background-color : white;
+    border-radius: 20px;
+}
+/* Members Demographic Container style */
+.memberInfo h2{
+    color: #055cba;
+    font-size: 36px;
+}
+.memberInfo h3 {
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-decoration: underline;
+    color: black;
+}
+.memberInfo p {
+    font-size: 20px;
+    color: black;
+}
+.memberInfo hr {
+    margin-top: 10px;
+    height: 3px;
+    background-color: black;
+}
+.memberInfo img {
+    max-width: 100%;
+    max-height: 100%;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+.memberInfo article{
+    display: flex;
+    flex-direction: column;
+}
+/* Styling the timetable */
+#timetable{
+    text-align: center;
+    margin-top: 50px;
+}
+#timetable > h2{
+    font-size: 40px;
+    color: #004fa4;
+}
+#timetable table{
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 90%;
+}
+/* Styling table header */
+#timetable table th {
+    background-color: rgb(105, 105, 105);
+    padding: 10px;
+    font-family: 'Noto Sans', serif;
+    font-weight: 600;
+    color: white;
+    border: 2px solid #ccc;
+    box-shadow: 0 0 0 1px #ccc;
+    font-size: 18px;
+}
+#timetable table thead{
+    border: 2px solid #ccc;
+    box-shadow: 0 0 0 1px #ccc;
+}
+/* Styling table data */
+#timetable table td {
+    padding: 20px 5px;
+    font-family: 'Noto Sans', serif;
+    text-align: center;
+    border: 2px solid #ccc;
+    box-shadow: 0 0 0 1px #ccc;
+    font-size: 14px;
+}
+#timetable table tbody tr{
+    background-color: #d9d6ff;
+}
+#timetable table tbody tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+/* Positioning team section */
+#team-section {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+}
+#team-section div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+#team-section > h2{
+    margin-top: 50px;
+    font-size: 40px;
+    color: #004fa4;
+    text-align: center;
+}
+#team-section p{
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    color: black;
+}
+#team-section a{
+    text-decoration: none;
+    color: #005eff;
+}
+.team-member {
+    text-align: center;
+}
+/* Style Team Member Images and Links */
+.team-member img {
+    max-width: 250px;
+    max-height: 200px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.team-member h3 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+.team-member p {
+    font-size: 1rem;
+    color: black;
+}
+.team-member a {
+    color: #005eff;
+    text-decoration: none;
+}
+/* End of About Styles */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* Developer: Viet Hoang Pham. This is enhancement website */
+#EnhancementImgIndex{
+    background-color: #1d1d1d;
+}
+/* Center the container  */
+#EnhancementHeader{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    padding: 100px 0;
+}
+/* The checkbox mustn't be displayed visually */
+#AnimationEnhancementHeader{
+    display: none;
+}
+/* Display the content on the column */
+.EnhancementClick{
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 600;
+    font-size: 72px;
+}
+/* Styling Header (Label) with glow effect before the checkbox is triggered */
+#EnhancementHeader > label{
+    color: white;
+    height: auto;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    animation: glow 1s ease-in-out infinite alternate;
+    cursor: pointer;
+}
+/* Glow Effect */
+@keyframes glow {
+    from {
+      text-shadow: 0 0 0px #248eff, 0 0 5px #248eff, 0 0 10px #248eff, 0 0 15px #248eff, 0 0 20px #248eff;
+    }
+    to {
+      text-shadow: 0 0 15px #007bff, 0 0 20px #007bff, 0 0 25px #007bff, 0 0 30px #007bff, 0 0 35px #007bff;
+    }
+}
+/* Header (Label) disappear when the checkbox is triggered */
+#AnimationEnhancementHeader:checked + label{
+    display: none;
+}
+/* Hide the contents before the checkbox is triggered */
+#EnhancementHeader a{
+    font-size: 0px;
+    color: white;
+}
+#EnhancementHeader div{
+    position: fixed;
+    opacity: 0;
+}
+/* Styles of appeared contents when checkbox is triggered using general sibling combinators */
+#AnimationEnhancementHeader:checked ~ div{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    position: relative;
+    opacity: 1;
+}
+#AnimationEnhancementHeader:checked ~ div > a{
+    margin: 20px 0;
+    font-size: 32px;
+    font-weight: 700;
+    padding: 20px;
+    width: 600px;
+    text-decoration: none;
+    transition-duration: 0.5s;
+    border-radius: 20px;
+    background-color: #0087ee;
+}
+#AnimationEnhancementHeader:checked ~ div > a > h2{
+    font-size: 27px;
+    color: white;
+    margin-bottom: 5px;
+    font-weight: 900;
+}
+#AnimationEnhancementHeader:checked ~ div > a > h3{
+    font-size: 22px;
+    color: white;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+#AnimationEnhancementHeader:checked ~ div > a > hr{
+    border: none;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    height: 4px;
+    background-color: white;
+}
+#AnimationEnhancementHeader:checked ~ div > a > p{
+    font-size: 20px;
+    color: black;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.redText{
+    color: rgb(207, 0, 0);
+}
+.orangeText{
+    color: #FEFF00;
+}
+/* Style the first column with odd position */
+#AnimationEnhancementHeader:checked ~ #FirstEnhancementColumn > a:nth-child(odd){
+    background-color: rgb(255, 255, 255);
+}
+#AnimationEnhancementHeader:checked ~ #FirstEnhancementColumn > a:nth-child(odd) h2{
+    color:#0087ee;
+}
+#AnimationEnhancementHeader:checked ~ #FirstEnhancementColumn > a:nth-child(odd) h3{
+    color:#0087ee;
+}
+#AnimationEnhancementHeader:checked ~ #FirstEnhancementColumn > a:nth-child(odd) > hr{
+    background-color: #0087ee;
+}
+#AnimationEnhancementHeader:checked ~ #FirstEnhancementColumn > a:hover{
+    background-color: #1599ff;
+    transform: scale(1.1);
+}
+#AnimationEnhancementHeader:checked ~ #FirstEnhancementColumn > a:nth-child(odd):hover{
+    background-color: #ebfbff;
+}
+/* Style the Second column with odd position */
+#AnimationEnhancementHeader:checked ~ #SecondEnhancementColumn > a:nth-child(even){
+    background-color: rgb(255, 255, 255);
+}
+#AnimationEnhancementHeader:checked ~ #SecondEnhancementColumn > a:nth-child(even) > h2{
+    color:#0087ee;
+}
+#AnimationEnhancementHeader:checked ~ #SecondEnhancementColumn > a:nth-child(even) > h3{
+    color:#0087ee;
+}
+#AnimationEnhancementHeader:checked ~ #SecondEnhancementColumn > a:nth-child(even) > hr{
+    background-color: #0087ee;
+}
+#AnimationEnhancementHeader:checked ~ #SecondEnhancementColumn > a:hover{
+    background-color: #1599ff;
+    transform: scale(1.1);
+}
+#AnimationEnhancementHeader:checked ~ #SecondEnhancementColumn > a:nth-child(even):hover{
+    background-color: #ebfbff;
+}
+/* Highlighting with border red if an enhancement is clicked */
+#BodyIndex:target, #Enhancement1:target, #Enhancement2:target, #ReferenceNumber:target {
+    border: 5px solid rgb(255, 0, 111);
+}
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* Developer: Viet Hoang Pham. This is footer CSS style */
+footer{
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    color: white;
+    height: auto;
+    width: 100%;
+}
+/* Setting flexbox for each container */
+footer > div{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 4%;
+}
+footer hr{
+    background-color: #faebd7;
+    height: 2px;
+}
+/* Styling Logo Company */
+footer > div img{
+    width: 25%;
+}
+/* Since I am using flexbox, I don't need to float to the left */
+footer > div:first-child{
+    margin-left: 2%;
+    margin-right: 10%;
+    width: 30%;
+}
+/* Styling the flag circle */
+#LinkListIndex{
+    margin-top: 4%;
+}
+#LinkListIndex img{
+    height: 40px;
+    margin-right: 3%;
+    width: auto;
+}
+#LinkListIndex a{
+    text-decoration: none;
+}
+/* Since I am using flexbox, I don't need to float to the right */
+/* Diving the right container to three and style it */
+footer > div:last-child{
+    width: 60%;
+}
+#FooterNavigationLinks{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+}
+#FooterNavigationLinks > div{
+    margin-right: 20%;
+    display: flex;
+    flex-direction: column;
+}
+#ContactLink{
+    margin-top: 50px;
+}
+footer p{
+    font-size: 14px;
+    color: white;
+}
+/* This Class will be used in PhoneResponsive.css */
+.ResponsiveDivideFooter{
+    display: none;
+}
+/* General styles of the header and links of footer*/
+footer > div h3{
+    color:#4086fe;
+    font-size: 20px;
+}
+footer > div a{
+    color:rgb(227, 227, 227);
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 15px;
+    font-weight: 400;
+}
+footer > div > p, footer > div > div p{
+    margin-top: 4%;
+}
+/* This is the end of footer styles */
+    
+    
