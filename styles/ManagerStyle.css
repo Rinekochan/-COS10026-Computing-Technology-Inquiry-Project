@@ -1,420 +1,196 @@
-/*Fonts using in this website */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@700&family=PT+Sans:wght@700&family=Pacifico&family=Poppins:wght@400;700&display=swap');
-/* Styling the color when the user want to highlight a text */
-::selection{
-    background-color: rgb(253, 230, 197);
-    color: black;
-}
-/* Set the default style of elements*/
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    position: relative;
-    scroll-behavior: smooth;
-}
-input:focus{
-    outline: none;
-}
-h1{
-    font-family: 'Poppins', serif;
-} 
-h2, h3, h4, a{
-    font-family: 'Noto Sans', sans-serif;
-    color: black;
-    line-height: 1.5;
-}
-p{
-    font-family: 'Noto Sans', sans-serif;
-    color: #777;
-    line-height: 1.6;
-}
-body{
-    width: 100%;
-    max-width: 100%;
-}
-/* The background of index, jobs and about pages */
-#MainBackground{
-    background-color: #efefef;
-}
-/* ------------------------------------------------------ */
-/* ------------------------------------------------------ */
-/* ------------------------------------------------------ */
-/* Developer: Viet Hoang Pham. This is navigation bar CSS style for manager page */
-nav{
-    position: fixed;
-    display: flex;
-    width: 225px; 
-    height: 100%;
-    background-color:#272727;
-    flex-direction: column;
-    z-index: 3;
-    border-right: 5px solid rgb(182, 164, 164);
-}
-nav > a{
-    margin: 10px 0;
-    height: 50px;
-    text-align: center;
-}
-nav > a img{
-    width: 140px;
-}
-nav > h1{
-    font-size: 24px;
-    color: #fff;
-    background-color: #005494;
-    text-align: center;
-    padding: 12.5px 0;
-}
-nav ul, nav ul li, nav ul li a{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-.menuicon{
-    font-size: 32px;
-}
-nav ul li a{
-    color: #fff;
-    font-family: 'Poppins', serif;
-    font-size: 18px;
-    font-weight: bold;
-    transition: all 0.23s ease;
-    padding: 15px;
-    text-decoration: none;
-    text-align: center;
-}
+<!--
+    Name/ID: Viet Hoang Pham 104506968, Humayra Jahan 104757245
+    Viet Hoang Pham is responsible for dashboard page, login/register page and front-end of manage page
+    Humayra Jahan is responsible for back-end of manage page 
+    Assignment 2
+-->
+<!DOCTYPE html>
 
-/* Making hover effect when hover into a menu link */
-nav ul li a:hover {
-    background: #faebd7;
-    color: black;
-}
-/* Styling the current page box */
-nav ul li a#active {
-    background-color: #0087ee;
-    color: black;
-}
-nav button{
-    margin: 0 auto; 
-    margin-top: auto;
-    margin-bottom: 7.5%;
-    background-color: red;
-    border: none;
-    width: 85%;
-    color: #fff;
-    font-family: 'Poppins', serif;
-    font-weight: bold;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 10px;
-    padding: 10px 0;
-    cursor: pointer;
-    transition-duration: 0.2s;
-}
-nav button:hover{
-    transform: scale(1.05);
-    transition-duration: 0.2s;
-}
-header{
-    position: fixed;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    width: 100%;
-    height: 70px;
-    background-color: white;
-    align-items: center;
-    z-index: 2;
-    box-shadow: 3px 2px 2px rgb(205, 205, 205);
-}
-header p{
-    font-size: 20px;
-    font-weight: 500;
-    color: black;
-    margin-right: 35px;
-}
-header #username{
-    color: #0068b8;
-    font-weight: 600;
-}
-header > button{
-    display: flex;
-    align-items: center;
-    background-color: red;
-    border: none;
-    color: #fff;
-    font-family: 'Poppins', serif;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 10px;
-    padding: 0 10px;
-    cursor: pointer;
-    margin-right: 20px;
-    transition-duration: 0.2s;
-}
-header > button:hover{
-    transform: scale(1.05);
-    transition-duration: 0.2s;
-}
-main{
-    padding: 100px 40px 30px 260px;
-}
-/* ------------------------------------------------------ */
-/* ------------------------------------------------------ */
-/* ------------------------------------------------------ */
-/* Developer: Viet Hoang Pham. This is manage page CSS style */
-form{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background-color: white;
-    border-radius: 15px;
-    height: auto;
-    box-shadow: 4px 3px 3px rgb(205, 205, 205);
-}
-form #serverquery{
-    display: flex;
-    justify-content: space-evenly;
-    padding: 15px;
-}
-form select{
-    text-align: center;
-    background-color: white;
-}
-select, input, label, button{
-    font-family: 'Noto Sans', sans-serif;
-    color: black;
-    line-height: 1.5;
-    border-radius: 5px;
-    margin: 0 3px;
-}
-select, button{
-    cursor: pointer;
-}
-input::placeholder{
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 14px;
-}
-form button{
-    height: 50px;
-    background-color:#0961a5;
-    color: white;
-    font-size: 17px;
-    font-weight: 700;
-    border: none;
-    transition-duration: 0.2s;
-}
-form button:hover{
-    background-color:#177ecd;
-    transition-duration: 0.2s;
-}
-#deleteJobReference label{
-    font-size: 16px;
-    margin-right: 7px;
-}
-form select{
-    border: 2px solid rgb(128, 128, 128);
-    background-color: rgb(244, 250, 255);
-    font-size: 16px;
-    height: 50px;
-}
-#deleteJobReference select{
-    width: 100px;
-}
-#deleteJobReference button{
-    width: 160px;
-}
-#searchQuery select{
-    width: 150px;
-}
-#searchQuery button{
-    width: 100px;
-}
-#searchQuery label{
-    display: none;
-}
-#searchQuery input{
-    height: 50px;
-    width: 250px;
-    border: 2px solid rgb(205, 205, 205);
-    padding: 10px;
-    font-size: 16px;
-    transition-duration: 0.1s;
-}
-#searchQuery input:focus{
-    border: 2px solid #177ecd;
-    transition-duration: 0.1s;
-}
-form th, form td{
-    font-family: 'Noto Sans', sans-serif;
-}
-#tableheader{
-    background-color: #272727;
-    border: none;
-}
-/* Table CSS style of manage page */
-table{
-    border-collapse: collapse;
-}
-table #tableheader th button{
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    color: white;
-    border: none;
-    background-color: transparent;
-}
-table #tableheader th{
-    font-size: 20px;
-    color: white;
-    text-align: center;
-    border: none;
-    padding: 2px 5px;
-    background-color: transparent;
-}
-form table tr{
-    border-radius: 20px;
-}
-form table tr td{
-    font-size: 17px;
-    border-bottom: 2px solid rgb(205, 205, 205);
-    padding: 10px 3px;
-    text-align: center;
-}
-.mainTextName{
-    color: black;
-    font-size: 17px;
-    font-weight: 600;
-}
-.mainText{
-    color: black;
-    font-size: 17px;
-}
-.subText{
-    color: #00447b;
-    font-size: 14px;
-}
-.deleteButton{
-    font-size: 24px;
-    color: red;
-}
-.editButton{
-    font-size: 24px;
-    color: #077ad1;
-}
-.statusNew, .statusCurrent, .statusFinal{
-    display: flex;
-    flex-direction: row;
-    width: 100px;
-    height: 40px;
-    border-radius: 20px;
-    margin: 0 auto;
-    justify-content: space-evenly;
-    align-items: center;
-    font-weight: 700;
-    font-size: 18px;
-    color: white;
-}
-.statusNew{
-    background-color: rgb(185, 255, 185);
-    color: rgb(0, 122, 0);
-}
-.statusCurrent{
-    background-color: rgb(255, 255, 167);
-    color: rgb(119, 101, 0);
-}
-.statusFinal{
-    background-color: rgb(181, 220, 255);
-    color: rgb(0, 85, 159);
-}
-#pagination{
-    margin: 30px auto;
-}
-#pagination a{
-    font-family: 'Poppins', serif;
-    font-weight: 800;
-    text-decoration: none;
-    padding: 6.5px 17.5px;
-    color: white;
-    background-color: #272727;
-    border: 2px solid black;
-    transition-duration: 0.3s;
-}
-#pagination a:first-child{
-    border-radius: 15px 0px 0px 15px;
-    background-color: #083d65;
-}
-#pagination a:last-child{
-    border-radius: 0px 15px 15px 0px;
-    background-color: #083d65;
-}
-#pagination a:hover{
-    background: #faebd7;
-    color: black;
-    transition-duration: 0.3s;
-}
-#pagination #currentPage{
-    background-color: #0c77c8;
-    color: white;
-}
-
-/* ------------------------------------------------------ */
-/* ------------------------------------------------------ */
-/* ------------------------------------------------------ */
-/* Developer: Viet Hoang Pham. This is Dashboard page CSS style */
-#Dashboard{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-}
-#Dashboard article{
-    display: flex;
-    flex-direction: row;
-    padding: 20px 20px 50px 20px;
-    background-color: #fff;
-    margin: 0 20px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 1px rgb(205, 205, 205);
-}
-#Dashboard article p{
-    font-size: 40px;
-    font-weight: bold;
-    color: black;
-}
-#Dashboard article h2{
-    font-size: 27px;
-    font-weight: 600;
-}
-.dashboardicon{
-    margin-left: 50px;
-    margin-top: 20px;
-    font-size: 48px;
-}
-#NewAppDashboard{
-    border-bottom: 10px solid rgb(0, 172, 0);
-}
-#Dashboard article:first-child div h2{
-    color: rgb(0, 122, 0);
-}
-#Dashboard article:first-child .dashboardicon{
-    color: rgb(0, 122, 0);
-}
-#CurrentAppDashboard{
-    border-bottom: 10px solid rgb(174, 148, 0);
-}
-#Dashboard article:nth-child(2) div h2{
-    color: rgb(119, 101, 0);
-}
-#Dashboard article:nth-child(2) .dashboardicon{
-    color: rgb(119, 101, 0);
-}
-#FinalAppDashboard{
-    border-bottom: 10px solid rgb(0, 113, 211);
-}
-#Dashboard article:nth-child(3) div h2{
-    color: rgb(0, 85, 159);
-}
-#Dashboard article:nth-child(3) .dashboardicon{
-    color: rgb(0, 85, 159);
-}
+<html lang = "en">
+<head>
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is management page of HPM" >
+    <meta name="keywords" content="Management page" >
+    <!-- Developer of this page is Viet Hoang Pham, Humayra Jahan -->
+    <meta name="author" content="Viet Hoang Pham, Humayra Jahan" >
+    <title>HPM: Management</title>
+    <!-- This css file styles manager website -->
+    <link rel = "stylesheet" href = "styles/ManagerStyle.css">
+    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel = "shortcut icon" href="images/favicon.png">
+</head>
+<body id = "MainBackground">
+    <!--Developer: Viet Hoang Pham. This is Manager Navigation Menu and Header code. You should add this at the start of <body> element-->
+    <?php include_once 'managermenuandheader.inc';?>
+    <!--End of Navigation Menu Code.-->
+    <main>
+        <form method = "POST" action = "manage.php">
+            <div id = "serverquery">
+                <div id = "deleteJobReference">
+                    <label for = "delete">Job Reference</label>
+                    <select id = "delete" name = "JobRefNum">
+                        <option value = "null">Choose</option>
+                        <option value = "00001">00001</option>
+                        <option value = "00010">00010</option>
+                        <option value = "00011">00011</option>
+                        <option value = "00100">00100</option>
+                        <option value = "00101">00101</option>
+                    </select>
+                    <button type = "submit" name = "deleteJobRefNum">Remove Records</button>
+                </div>
+                <div id = "searchQuery">
+                    <label for = "search">Field</label>
+                    <select id = "search" name = "JobRefNum">
+                        <option value = "all">All</option>
+                        <option value = "jobrefnum">Job Reference</option>
+                        <option value = "firstname">First Name</option>
+                        <option value = "lastname">Last Name</option>
+                        <option value = "fullname">Full Name</option>
+                        <option value = "status">Status</option>
+                    </select>
+                    <label for = "searchquery">Search</label>
+                    <input type = "text" id = "searchquery" name = "searchquery" placeholder = "Search...">
+                    <button type = "submit" name = "search">Search</button>
+                </div>
+            </div>
+            <table>
+                <tr id = "tableheader">
+                    <th><button type = "submit" name = "sortID">ID <i class = "fa fa-sort"></i></button></th>
+                    <th><button type = "submit" name = "sortName">Applicants <i class = "fa fa-sort"></i></button></th>
+                    <th><button type = "submit" name = "sortAge">Age <i class = "fa fa-sort"></i></button></th>
+                    <th><button type = "submit" name = "sortJob">Preferred Job <i class = "fa fa-sort"></i></button></th>
+                    <th><button type = "submit" name = "sortAdd">Address <i class = "fa fa-sort"></i></button></th>
+                    <th><button type = "submit" name = "sortStatus">Status <i class = "fa fa-sort"></i></button></th>
+                    <th>More</th>
+                    <th>Delete</th>
+                </tr>
+                <tr>
+                    <td class = "mainTextName">#1</td>
+                    <td>
+                        <p class = "mainTextName">Viet Hoang Pham <i class = "fa fa-mars"></i></p>
+                        <p class = "subText">banana@gmail.com - 0123456789</p>
+                    </td>
+                    <td>18</td>
+                    <td>
+                        <p class = "mainText">IT Project Manager</p>
+                        <p class = "subText">00100</p>
+                    </td>
+                    <td>
+                        <p class = "mainText">5 Ohio Drive</p>
+                        <p class = "subText">CBD, VIC, 3100</p>
+                    </td>
+                    <td><span class = "statusNew">New</span></td>
+                    <td><span class = "editButton"><i class = "fa fa-edit"></i></span></td>
+                    <td class = "deleteButton"><span class = "deleteButton"><i class = "fa fa-trash"></i></span></td>
+                </tr>
+                <tr>
+                    <td class = "mainTextName">#2</td>
+                    <td>
+                        <p class = "mainTextName">Siradanai Inchansuk <i class = "fa fa-mars"></i></p>
+                        <p class = "subText">banana@gmail.com - 0123456789</p>
+                    </td>
+                    <td>19</td>
+                    <td>
+                        <p class = "mainText">Software Developer</p>
+                        <p class = "subText">00001</p>
+                    </td>
+                    <td>
+                        <p class = "mainText">6 Ohio Drive</p>
+                        <p class = "subText">CBD, VIC, 3100</p>
+                    </td>
+                    <td><span class = "statusFinal">Final</span></td>
+                    <td><span class = "editButton"><i class = "fa fa-edit"></i></span></td>
+                    <td><span class = "deleteButton"><i class = "fa fa-trash"></i></span></td>
+                </tr>
+                <tr>
+                    <td class = "mainTextName">#3</td>
+                    <td>
+                        <p class = "mainTextName">Someone <i class = "fa fa-question-circle"></i></p>
+                        <p class = "subText">banana@gmail.com - 0123456789</p>
+                    </td>
+                    <td>56</td>
+                    <td>
+                        <p class = "mainText">Network Administrator</p>
+                        <p class = "subText">00010</p>
+                    </td>
+                    <td>
+                        <p class = "mainText">7 Ohio Drive</p>
+                        <p class = "subText">CBD, VIC, 3100</p>
+                    </td>
+                    <td><span class = "statusCurrent">Current</span></td>
+                    <td><span class = "editButton"><i class = "fa fa-edit"></i></span></td>   
+                    <td><span class = "deleteButton"><i class = "fa fa-trash"></i></span></td>
+                </tr>
+                    <td class = "mainTextName">#4</td>
+                    <td>
+                        <p class = "mainTextName">Viet Hoang Pham <i class = "fa fa-mars"></i></p>
+                        <p class = "subText">banana@gmail.com - 0123456789</p>
+                    </td>
+                    <td>18</td>
+                    <td>
+                        <p class = "mainText">IT Project Manager</p>
+                        <p class = "subText">00100</p>
+                    </td>
+                    <td>
+                        <p class = "mainText">5 Ohio Drive</p>
+                        <p class = "subText">CBD, VIC, 3100</p>
+                    </td>
+                    <td><span class = "statusNew">New</span></td>
+                    <td><span class = "editButton"><i class = "fa fa-edit"></i></span></td>
+                    <td class = "deleteButton"><span class = "deleteButton"><i class = "fa fa-trash"></i></span></td>
+                </tr>
+                <tr>
+                    <td class = "mainTextName">#5</td>
+                    <td>
+                        <p class = "mainTextName">Siradanai Inchansuk <i class = "fa fa-mars"></i></p>
+                        <p class = "subText">banana@gmail.com - 0123456789</p>
+                    </td>
+                    <td>19</td>
+                    <td>
+                        <p class = "mainText">Data Analyst</p>
+                        <p class = "subText">00101</p>
+                    </td>
+                    <td>
+                        <p class = "mainText">6 Ohio Drive</p>
+                        <p class = "subText">CBD, VIC, 3100</p>
+                    </td>
+                    <td><span class = "statusFinal">Final</span></td>
+                    <td><span class = "editButton"><i class = "fa fa-edit"></i></span></td>
+                    <td><span class = "deleteButton"><i class = "fa fa-trash"></i></span></td>
+                </tr>
+                <tr>
+                    <td class = "mainTextName">#6</td>
+                    <td>
+                        <p class = "mainTextName">Humayra Jahan <i class = "fa fa-venus"></i></p>
+                        <p class = "subText">banana@gmail.com - 0123456789</p>
+                    </td>
+                    <td>18</td>
+                    <td>
+                        <p class = "mainText">Cyber Security Analyst</p>
+                        <p class = "subText">00011</p>
+                    </td>
+                    <td>
+                        <p class = "mainText">124 Station Street</p>
+                        <p class = "subText">Box Hill, VIC, 3169</p>
+                    </td>
+                    <td><span class = "statusCurrent">Current</span></td>
+                    <td><span class = "editButton"><i class = "fa fa-edit"></i></span></td>   
+                    <td><span class = "deleteButton"><i class = "fa fa-trash"></i></span></td>
+                </tr>
+            </table>
+            <!-- Pagination of the manage page -->
+            <div id = "pagination">
+                <a href = "">First</a>
+                <a href = "">Previous</a>
+                <a href = "" id = "currentPage">1</a>
+                <a href = "">2</a>
+                <a href = "">3</a>
+                <a href = "">4</a>
+                <a href = "">...</a>
+                <a href = "">Next</a>
+                <a href = "">Last</a>
+            </div>
+        </form>
+    </main>
+</body>
