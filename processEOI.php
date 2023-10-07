@@ -213,6 +213,22 @@
                 }
                 else{
                     // Setting up mail connection by using PHPMailer library 
+                    /**
+                     * PHP Version 5
+                     * @package PHPMailer
+                     * @link https://github.com/PHPMailer/PHPMailer/
+                     * @author Marcus Bointon (Synchro/coolbru) <phpmailer@synchromedia.co.uk>
+                     * @author Jim Jagielski (jimjag) <jimjag@gmail.com>
+                     * @author Andy Prevost (codeworxtech) <codeworxtech@users.sourceforge.net>
+                     * @author Brent R. Matzelle (original founder)
+                     * @copyright 2012 - 2014 Marcus Bointon
+                     * @copyright 2010 - 2012 Jim Jagielski
+                     * @copyright 2004 - 2009 Andy Prevost
+                     * @license http://www.gnu.org/copyleft/lesser.html GNU Lesser General Public License
+                     * @note This program is distributed in the hope that it will be useful - WITHOUT
+                     * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+                     * FITNESS FOR A PARTICULAR PURPOSE.
+                     */
                     $mail = new PHPMailer;
 
                     //Server settings
@@ -244,12 +260,13 @@
                     $mail->isHTML(true);                                  //Set email format to HTML
                     $mail->Subject = 'Thank you for your application at the HPM Company';
                     $mail->Body = confirmationEmail($firstName, $lastName);
-                    // $mail->AltBody = 'Dear ' . $firstName . ' ' . $lastName . ',
-                    //     Thank you for applying to the HPM Company.
-                    //     We’d like to inform you that we have received your application.
-                    //     Our team is currently reviewing all applications and we are planning to schedule interviews. 
-                    //     You will receive an email from our team within the next 3 working days. 
-                    //     In any case, we will keep you updated on your application status.';
+                    $mail->AltBody = 'Dear ' . $firstName . ' ' . $lastName . ',
+                        Thank you for applying to the HPM Company.
+                        We’d like to inform you that we have received your application.
+                        Our team is currently reviewing all applications and we are planning to schedule interviews. 
+                        You will receive an email from our team within the next 3 working days. 
+                        In any case, we will keep you updated on your application status.';
+                    // Third Party Code PHPMailer Acknowledgement: https://github.com/PHPMailer/PHPMailer
                     // Display success page for the users and ask them to check their email for confirmation
                     $mail->addEmbeddedImage('images/Logo_name_horizontal.png', 'image1');
                     if ($mail->send()){
