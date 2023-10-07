@@ -68,9 +68,9 @@
                     <th>Delete</th>
                 </tr>
                 <tr>
-                    <td>#1</td>
+                    <td class = "mainTextName">#1</td>
                     <td>
-                        <p class = "mainText">Viet Hoang Pham <i class = "fa fa-mars"></i></p>
+                        <p class = "mainTextName">Viet Hoang Pham <i class = "fa fa-mars"></i></p>
                         <p class = "subText">banana@gmail.com</p>
                     </td>
                     <td>
@@ -87,14 +87,14 @@
                     <td class = "deleteButton"><span class = "deleteButton"><i class = "fa fa-trash"></i></span></td>
                 </tr>
                 <tr>
-                    <td>#2</td>
+                    <td class = "mainTextName">#2</td>
                     <td>
-                        <p class = "mainText">Siradanai Inchansuk <i class = "fa fa-mars"></i></p>
+                        <p class = "mainTextName">Siradanai Inchansuk <i class = "fa fa-mars"></i></p>
                         <p class = "subText">banana@gmail.com</p>
                     </td>
                     <td>
-                        <p class = "mainText">God</p>
-                        <p class = "subText">99999</p>
+                        <p class = "mainText">Software Developer</p>
+                        <p class = "subText">00001</p>
                     </td>
                     <td>
                         <p class = "mainText">6 Ohio Drive</p>
@@ -106,14 +106,14 @@
                     <td><span class = "deleteButton"><i class = "fa fa-trash"></i></span></td>
                 </tr>
                 <tr>
-                    <td>#3</td>
+                    <td class = "mainTextName">#3</td>
                     <td>
-                        <p class = "mainText">Someone <i class = "fa fa-question-circle"></i></p>
+                        <p class = "mainTextName">Someone <i class = "fa fa-question-circle"></i></p>
                         <p class = "subText">banana@gmail.com</p>
                     </td>
                     <td>
-                        <p class = "mainText">CEO</p>
-                        <p class = "subText">01000</p>
+                        <p class = "mainText">Network Administrator</p>
+                        <p class = "subText">00010</p>
                     </td>
                     <td>
                         <p class = "mainText">7 Ohio Drive</p>
@@ -124,9 +124,9 @@
                     <td><span class = "editButton"><i class = "fa fa-edit"></i></span></td>   
                     <td><span class = "deleteButton"><i class = "fa fa-trash"></i></span></td>
                 </tr>
-                    <td>#4</td>
+                    <td class = "mainTextName">#4</td>
                     <td>
-                        <p class = "mainText">Viet Hoang Pham <i class = "fa fa-mars"></i></p>
+                        <p class = "mainTextName">Viet Hoang Pham <i class = "fa fa-mars"></i></p>
                         <p class = "subText">banana@gmail.com</p>
                     </td>
                     <td>
@@ -143,14 +143,14 @@
                     <td class = "deleteButton"><span class = "deleteButton"><i class = "fa fa-trash"></i></span></td>
                 </tr>
                 <tr>
-                    <td>#5</td>
+                    <td class = "mainTextName">#5</td>
                     <td>
-                        <p class = "mainText">Siradanai Inchansuk <i class = "fa fa-mars"></i></p>
+                        <p class = "mainTextName">Siradanai Inchansuk <i class = "fa fa-mars"></i></p>
                         <p class = "subText">banana@gmail.com</p>
                     </td>
                     <td>
-                        <p class = "mainText">God</p>
-                        <p class = "subText">99999</p>
+                        <p class = "mainText">Data Analyst</p>
+                        <p class = "subText">00101</p>
                     </td>
                     <td>
                         <p class = "mainText">6 Ohio Drive</p>
@@ -162,14 +162,14 @@
                     <td><span class = "deleteButton"><i class = "fa fa-trash"></i></span></td>
                 </tr>
                 <tr>
-                    <td>#6</td>
+                    <td class = "mainTextName">#6</td>
                     <td>
-                        <p class = "mainText">Humayra Jahan <i class = "fa fa-venus"></i></p>
+                        <p class = "mainTextName">Humayra Jahan <i class = "fa fa-venus"></i></p>
                         <p class = "subText">banana@gmail.com</p>
                     </td>
                     <td>
-                        <p class = "mainText">CEO</p>
-                        <p class = "subText">01000</p>
+                        <p class = "mainText">Cyber Security Analyst</p>
+                        <p class = "subText">00011</p>
                     </td>
                     <td>
                         <p class = "mainText">124 Station Street</p>
