@@ -1,6 +1,7 @@
 <!--
     Name/ID: Viet Hoang Pham 104506968
-    Assignment 1
+    Viet Hoang Pham is responsible for dashboard page, login/register page and front-end of manage page
+    Assignment 2
 -->
 <!DOCTYPE html>
 
@@ -19,12 +20,8 @@
     <link rel = "shortcut icon" href="images/favicon.png">
 </head>
 <body id = "MainBackground">
-    <header>
-        <p>Viet Hoang Pham</p>
-        <button><span class = "menuicon"><i class = "fa fa-sign-out"></i></span>Logout</button>
-    </header>
     <!--Developer: Viet Hoang Pham. This is Manager Navigation Menu code. You should add this at the start of <body> element-->
-    <?php include_once 'managermenu.inc';?>
+    <?php include_once 'managermenuandheader.inc';?>
     <!--End of Navigation Menu Code.-->
     <main>
         <div id = "Dashboard">
