@@ -68,6 +68,52 @@
             throw new Exception('Database connection error: ' . mysqli_connect_error());
         }
         else{
+            $sql_table="eoi";
+            $checkTableSQL = "SHOW TABLES LIKE '$sql_table'";
+            $result = $conn->query($checkTableSQL);
+            if ($result->num_rows == 0) {
+                $createTableSQL = "
+                CREATE TABLE `eoi` (
+                    `EOInumber` int(11) NOT NULL AUTO_INCREMENT,
+                    `JobRefNum` varchar(5) NOT NULL,
+                    `FirstName` varchar(20) NOT NULL,
+                    `LastName` varchar(20) NOT NULL,
+                    `DateOfBirth` date NOT NULL,
+                    `Gender` varchar(6) NOT NULL,
+                    `StreetAddress` varchar(40) NOT NULL,
+                    `SuburbOrTown` varchar(40) NOT NULL,
+                    `State` varchar(3) NOT NULL,
+                    `PostCode` varchar(4) NOT NULL,
+                    `Email` varchar(50) NOT NULL,
+                    `PhoneNumber` varchar(50) NOT NULL,
+                    `DegreeLevel` varchar(4) NOT NULL,
+                    `Degree` varchar(30) NOT NULL,
+                    `Experience` varchar(30) NOT NULL,
+                    `Skills` varchar(40) NOT NULL,
+                    `SkillsDescription` varchar(40) NOT NULL,
+                    `Status` varchar(20) NOT NULL,
+                    PRIMARY KEY (`EOInumber`)
+                )
+                ";
+                try{
+                    if ($conn->query($createTableSQL) === FALSE) {
+                        throw new Exception('Table failed to be created:');
+                    }
+                }
+                catch (Exception $e){
+                    // Handle the exception: display a user-friendly message
+                    echo '
+                    <div id = "errorMessage">
+                        <h1>500</h1>
+                        <h2>Connection Error</h2>
+                        <p>It seems like there are some problems about creating the table.</p>
+                        <p>Please try again. Apologies.</p>
+                        <a href = "apply.php">Back To Apply</a>
+                    </div>';
+                    
+                }
+            }
+
             // Validate each data and stores error messages
             $errMsg = "";
             if (isset($_POST["ReferenceNumber"])){
@@ -242,7 +288,7 @@
                     $mail->Username   = 'hpminquiry@gmail.com';                     //SMTP username
                     $mail->Password   = 'igdmzvjikrdjqyey';                               //SMTP password
                     $mail->SMTPSecure = 'tls';
-                    $mail->Port       = 25;                                    
+                    $mail->Port       = 587;                      //587 25               
                     $mail->SMTPOptions = array(
                         'ssl' => array(
                             'verify_peer' => false,
@@ -255,7 +301,6 @@
                     //Recipients
                     $mail->setFrom('hpminquiry@gmail.com', 'HPM HR Department');
                     $mail->addAddress($email, 'End user');
-                    $mail->addCC('risime4415@htoal.com');
                     $mail->isHTML(true);                                  // Set email format to HTML
                     // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
                     //Content
@@ -273,26 +318,30 @@
                     // Third Party Code PHPMailer Acknowledgement: https://github.com/PHPMailer/PHPMailer
                     // Display success page for the users and ask them to check their email for confirmation
                     $mail->addEmbeddedImage('images/Logo_name_horizontal.png', 'image1');
+
+                    $last_id = mysqli_insert_id($conn);
+                    mysqli_close($conn);
                     if ($mail->send()){
-                        echo '
-                        <div id = "successMessage">
+                        echo "
+                        <div id = 'successMessage'>
                             <h1>Success!</h1>
                             <h2>Your application form has been successfully recorded.</h2>
-                            <h3>Your EOI Number is <span style = "color: #f22800; font-weight: bold;">#1</span>, and your email address is <span style = "color: #f22800; font-weight: bold;">'.  $email . ' </span></h3>
+                            <h3>Your EOI Number is <span style = 'color: #f22800; font-weight: bold;'>#$last_id</span>, and your email address is <span style = 'color: #f22800; font-weight: bold;'>$email</span></h3>
                             <p>A confirmation email has been sent to your email address.</p>
                             <p>If you don’t see the email, please check your spam folder or verify your submitted email address.</p>
-                            <a href = "apply.php">Back To Apply</a>
+                            <a href = 'apply.php'>Back To Apply</a>
                         </div>
-                        ';
+                        ";
                     }
                     // Show error page if the email failed to send
                     else{
                         echo '
                         <div id = "errorMessage">
-                            <h1>500</h1>
-                            <h2>Connection Error</h2>
-                            <p>It seems like there are some problems about the connection.</p>
-                            <p>Please try again. Apologies.</p>
+                            <h1>503</h1>
+                            <h2>Email unsuccessfully sent</h2>
+                            <p>It seems like there are some problems whilst sending the email.</p>
+                            <p>Please verify whether email is valid or not then resubmit the form</p>
+                            <p>If the issue stills persist, please contact hpminquiry@gmail.com</p>.
                             <a href = "apply.php">Back To Apply</a>
                         </div>
                         ';
