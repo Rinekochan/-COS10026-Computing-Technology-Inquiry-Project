@@ -17,5 +17,9 @@
             }
         echo '</ul>
         <button>Logout</button>
-    </nav>';
+    </nav>
+    <header>
+        <p>Welcome <span id = "username">Viet Hoang Pham!</span></p>
+        <button><span class = "menuicon"><i class = "fa fa-sign-out"></i></span>Logout</button>
+    </header>';
 ?>
