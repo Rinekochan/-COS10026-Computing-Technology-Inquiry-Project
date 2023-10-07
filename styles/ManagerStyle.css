@@ -13,6 +13,9 @@
     position: relative;
     scroll-behavior: smooth;
 }
+input:focus{
+    outline: none;
+}
 h1{
     font-family: 'Poppins', serif;
 } 
@@ -107,6 +110,11 @@ nav button{
     border-radius: 10px;
     padding: 10px 0;
     cursor: pointer;
+    transition-duration: 0.2s;
+}
+nav button:hover{
+    transform: scale(1.05);
+    transition-duration: 0.2s;
 }
 header{
     position: fixed;
@@ -121,10 +129,14 @@ header{
     box-shadow: 3px 2px 2px rgb(205, 205, 205);
 }
 header p{
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+    margin-right: 35px;
+}
+header #username{
     color: #0068b8;
-    margin-right: 20px;
+    font-weight: 600;
 }
 header > button{
     display: flex;
@@ -139,6 +151,11 @@ header > button{
     padding: 0 10px;
     cursor: pointer;
     margin-right: 20px;
+    transition-duration: 0.2s;
+}
+header > button:hover{
+    transform: scale(1.05);
+    transition-duration: 0.2s;
 }
 main{
     padding: 100px 40px 30px 260px;
@@ -147,7 +164,7 @@ main{
 /* ------------------------------------------------------ */
 /* ------------------------------------------------------ */
 /* Developer: Viet Hoang Pham. This is manage page CSS style */
-#DisplayTableData{
+form{
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -156,11 +173,12 @@ main{
     height: auto;
     box-shadow: 4px 3px 3px rgb(205, 205, 205);
 }
-#DisplayTableData form{
+form #serverquery{
     display: flex;
     justify-content: space-evenly;
+    padding: 15px;
 }
-#DisplayTableData select{
+form select{
     text-align: center;
     background-color: white;
 }
@@ -178,22 +196,24 @@ input::placeholder{
     font-family: 'Noto Sans', sans-serif;
     font-size: 14px;
 }
-#DisplayTableData form{
-    padding: 15px;
-}
-#DisplayTableData form button{
+form button{
     height: 50px;
     background-color:#0961a5;
     color: white;
     font-size: 17px;
     font-weight: 700;
     border: none;
+    transition-duration: 0.2s;
+}
+form button:hover{
+    background-color:#177ecd;
+    transition-duration: 0.2s;
 }
 #deleteJobReference label{
     font-size: 16px;
     margin-right: 7px;
 }
-#DisplayTableData select{
+form select{
     border: 2px solid rgb(128, 128, 128);
     background-color: rgb(244, 250, 255);
     font-size: 16px;
@@ -216,12 +236,17 @@ input::placeholder{
 }
 #searchQuery input{
     height: 50px;
-    width: 200px;
+    width: 250px;
     border: 2px solid rgb(205, 205, 205);
     padding: 10px;
-    font-size: 14px;
+    font-size: 16px;
+    transition-duration: 0.1s;
 }
-#DisplayTableData th, #DisplayTableData td{
+#searchQuery input:focus{
+    border: 2px solid #177ecd;
+    transition-duration: 0.1s;
+}
+form th, form td{
     font-family: 'Noto Sans', sans-serif;
 }
 #tableheader{
@@ -245,13 +270,13 @@ table #tableheader th{
     color: white;
     text-align: center;
     border: none;
-    padding: 10px 5px;
+    padding: 2px 5px;
     background-color: transparent;
 }
-#DisplayTableData table tr{
+form table tr{
     border-radius: 20px;
 }
-#DisplayTableData table tr td{
+form table tr td{
     font-size: 17px;
     border-bottom: 2px solid rgb(205, 205, 205);
     padding: 10px 3px;
@@ -314,7 +339,26 @@ table #tableheader th{
     color: white;
     background-color: #272727;
     border: 2px solid black;
+    transition-duration: 0.3s;
 }
+#pagination a:first-child{
+    border-radius: 15px 0px 0px 15px;
+    background-color: #083d65;
+}
+#pagination a:last-child{
+    border-radius: 0px 15px 15px 0px;
+    background-color: #083d65;
+}
+#pagination a:hover{
+    background: #faebd7;
+    color: black;
+    transition-duration: 0.3s;
+}
+#pagination #currentPage{
+    background-color: #0c77c8;
+    color: white;
+}
+
 /* ------------------------------------------------------ */
 /* ------------------------------------------------------ */
 /* ------------------------------------------------------ */
