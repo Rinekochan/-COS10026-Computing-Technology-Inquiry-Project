@@ -1,6 +1,8 @@
 <!--
     Name/ID: Viet Hoang Pham 104506968, Humayra Jahan 104757245
-    Assignment 1
+    Viet Hoang Pham is responsible for dashboard page, login/register page and front-end of manage page
+    Humayra Jahan is responsible for back-end of manage page 
+    Assignment 2
 -->
 <!DOCTYPE html>
 
@@ -19,12 +21,8 @@
     <link rel = "shortcut icon" href="images/favicon.png">
 </head>
 <body id = "MainBackground">
-    <header>
-        <p>Viet Hoang Pham</p>
-        <button><span class = "menuicon"><i class="fa fa-sign-out"></i></span>Logout</button>
-    </header>
-    <!--Developer: Viet Hoang Pham. This is Manager Navigation Menu code. You should add this at the start of <body> element-->
-    <?php include_once 'managermenu.inc';?>
+    <!--Developer: Viet Hoang Pham. This is Manager Navigation Menu and Header code. You should add this at the start of <body> element-->
+    <?php include_once 'managermenuandheader.inc';?>
     <!--End of Navigation Menu Code.-->
     <main>
         <div id = "DisplayTableData">
@@ -60,28 +58,28 @@
                 <tr id = "tableheader">
                     <th><button type = "submit" name = "sortID">ID <i class = "fa fa-sort"></i></button></th>
                     <th><button type = "submit" name = "sortName">Applicants <i class = "fa fa-sort"></i></button></th>
+                    <th><button type = "submit" name = "sortAge">Age <i class = "fa fa-sort"></i></button></th>
                     <th><button type = "submit" name = "sortJob">Preferred Job <i class = "fa fa-sort"></i></button></th>
                     <th><button type = "submit" name = "sortAdd">Address <i class = "fa fa-sort"></i></button></th>
-                    <th><button type = "submit" name = "sortPhone">Phone <i class = "fa fa-sort"></i></button></th>
                     <th><button type = "submit" name = "sortStatus">Status <i class = "fa fa-sort"></i></button></th>
-                    <th>Update</th>
+                    <th>More</th>
                     <th>Delete</th>
                 </tr>
                 <tr>
                     <td class = "mainTextName">#1</td>
                     <td>
                         <p class = "mainTextName">Viet Hoang Pham <i class = "fa fa-mars"></i></p>
-                        <p class = "subText">banana@gmail.com</p>
+                        <p class = "subText">banana@gmail.com - 0123456789</p>
                     </td>
+                    <td>18</td>
                     <td>
                         <p class = "mainText">IT Project Manager</p>
                         <p class = "subText">00100</p>
                     </td>
                     <td>
                         <p class = "mainText">5 Ohio Drive</p>
-                        <p class = "subText">CBD, Ohio, 0000</p>
+                        <p class = "subText">CBD, VIC, 3100</p>
                     </td>
-                    <td >0123456789</td>
                     <td><span class = "statusNew">New</span></td>
                     <td><span class = "editButton"><i class = "fa fa-edit"></i></span></td>
                     <td class = "deleteButton"><span class = "deleteButton"><i class = "fa fa-trash"></i></span></td>
@@ -90,17 +88,17 @@
                     <td class = "mainTextName">#2</td>
                     <td>
                         <p class = "mainTextName">Siradanai Inchansuk <i class = "fa fa-mars"></i></p>
-                        <p class = "subText">banana@gmail.com</p>
+                        <p class = "subText">banana@gmail.com - 0123456789</p>
                     </td>
+                    <td>19</td>
                     <td>
                         <p class = "mainText">Software Developer</p>
                         <p class = "subText">00001</p>
                     </td>
                     <td>
                         <p class = "mainText">6 Ohio Drive</p>
-                        <p class = "subText">CBD, Ohio, 0000</p>
+                        <p class = "subText">CBD, VIC, 3100</p>
                     </td>
-                    <td >0123456789</td>
                     <td><span class = "statusFinal">Final</span></td>
                     <td><span class = "editButton"><i class = "fa fa-edit"></i></span></td>
                     <td><span class = "deleteButton"><i class = "fa fa-trash"></i></span></td>
@@ -109,17 +107,17 @@
                     <td class = "mainTextName">#3</td>
                     <td>
                         <p class = "mainTextName">Someone <i class = "fa fa-question-circle"></i></p>
-                        <p class = "subText">banana@gmail.com</p>
+                        <p class = "subText">banana@gmail.com - 0123456789</p>
                     </td>
+                    <td>56</td>
                     <td>
                         <p class = "mainText">Network Administrator</p>
                         <p class = "subText">00010</p>
                     </td>
                     <td>
                         <p class = "mainText">7 Ohio Drive</p>
-                        <p class = "subText">CBD, Ohio, 0000</p>
+                        <p class = "subText">CBD, VIC, 3100</p>
                     </td>
-                    <td >0123456789</td>
                     <td><span class = "statusCurrent">Current</span></td>
                     <td><span class = "editButton"><i class = "fa fa-edit"></i></span></td>   
                     <td><span class = "deleteButton"><i class = "fa fa-trash"></i></span></td>
@@ -127,17 +125,17 @@
                     <td class = "mainTextName">#4</td>
                     <td>
                         <p class = "mainTextName">Viet Hoang Pham <i class = "fa fa-mars"></i></p>
-                        <p class = "subText">banana@gmail.com</p>
+                        <p class = "subText">banana@gmail.com - 0123456789</p>
                     </td>
+                    <td>18</td>
                     <td>
                         <p class = "mainText">IT Project Manager</p>
                         <p class = "subText">00100</p>
                     </td>
                     <td>
                         <p class = "mainText">5 Ohio Drive</p>
-                        <p class = "subText">CBD, Ohio, 0000</p>
+                        <p class = "subText">CBD, VIC, 3100</p>
                     </td>
-                    <td >0123456789</td>
                     <td><span class = "statusNew">New</span></td>
                     <td><span class = "editButton"><i class = "fa fa-edit"></i></span></td>
                     <td class = "deleteButton"><span class = "deleteButton"><i class = "fa fa-trash"></i></span></td>
@@ -146,17 +144,17 @@
                     <td class = "mainTextName">#5</td>
                     <td>
                         <p class = "mainTextName">Siradanai Inchansuk <i class = "fa fa-mars"></i></p>
-                        <p class = "subText">banana@gmail.com</p>
+                        <p class = "subText">banana@gmail.com - 0123456789</p>
                     </td>
+                    <td>19</td>
                     <td>
                         <p class = "mainText">Data Analyst</p>
                         <p class = "subText">00101</p>
                     </td>
                     <td>
                         <p class = "mainText">6 Ohio Drive</p>
-                        <p class = "subText">CBD, Ohio, 0000</p>
+                        <p class = "subText">CBD, VIC, 3100</p>
                     </td>
-                    <td >0123456789</td>
                     <td><span class = "statusFinal">Final</span></td>
                     <td><span class = "editButton"><i class = "fa fa-edit"></i></span></td>
                     <td><span class = "deleteButton"><i class = "fa fa-trash"></i></span></td>
@@ -165,17 +163,17 @@
                     <td class = "mainTextName">#6</td>
                     <td>
                         <p class = "mainTextName">Humayra Jahan <i class = "fa fa-venus"></i></p>
-                        <p class = "subText">banana@gmail.com</p>
+                        <p class = "subText">banana@gmail.com - 0123456789</p>
                     </td>
+                    <td>18</td>
                     <td>
                         <p class = "mainText">Cyber Security Analyst</p>
                         <p class = "subText">00011</p>
                     </td>
                     <td>
                         <p class = "mainText">124 Station Street</p>
-                        <p class = "subText">Box Hill, Victoria, 0000</p>
+                        <p class = "subText">Box Hill, VIC, 3169</p>
                     </td>
-                    <td >0123456789</td>
                     <td><span class = "statusCurrent">Current</span></td>
                     <td><span class = "editButton"><i class = "fa fa-edit"></i></span></td>   
                     <td><span class = "deleteButton"><i class = "fa fa-trash"></i></span></td>
@@ -185,7 +183,7 @@
             <div id = "pagination">
                 <a href = "">First</a>
                 <a href = "">Previous</a>
-                <a href = "">1</a>
+                <a href = "" id = "currentPage">1</a>
                 <a href = "">2</a>
                 <a href = "">3</a>
                 <a href = "">4</a>
