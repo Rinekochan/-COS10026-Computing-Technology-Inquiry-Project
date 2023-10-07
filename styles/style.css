@@ -52,7 +52,7 @@ p{
 /* Styling the elements in the menu bar */
 /* Since I am using the flexbox, I don't need to use float */
 #MenuBar img{
-    margin-left: 20%;
+    margin-left: 0%;
     height: auto;
     width: 40%;
 }
@@ -71,17 +71,25 @@ p{
 }
 /* Eliminate the list index */
 nav{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    width: 100%;
 }
 nav ul{
+    display: flex;
+    flex-direction: row;
     list-style: none;
+}
+nav ul #loginandregister{
+    margin-right: 25px;
+    margin-left: auto;
+    float: right;
+}
+nav ul li{
+    margin: 0;
 }
 nav ul li a{
     margin-top: 5%;
     margin-bottom: 5%;
-    margin-left: 3px;
+    margin-left: 5px;
     color: #fff;
     font-family: 'Poppins', serif;
     font-size: 20px;
@@ -1365,7 +1373,7 @@ dl, dt, dd{
 #successMessage h2{
     color: rgb(0, 172, 0);
     font-size: 32px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 #successMessage h3{
     color: rgb(0, 0, 0);

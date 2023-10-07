@@ -58,15 +58,21 @@
     }
     /* Make an border to clarify the separtion between navigation link and logo, hamburger bar */
     nav ul{
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
         width: 100%;
         border-top: 2px solid #b6a4a4;
     }
     nav ul li{
         display: inline;
-        width: 100%;
+        width: auto;
+    }
+    nav ul #loginandregister{
+        display: block;
+        margin: auto 10px auto 10px;
     }
     nav ul li a{
-        display: inline-block;
         border-radius: 20px;
         margin: 10px 5px;
         padding: 7px 15px;

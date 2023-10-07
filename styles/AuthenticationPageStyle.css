@@ -1,0 +1,172 @@
+/*Fonts using in this website */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@700&family=PT+Sans:wght@700&family=Pacifico&family=Poppins:wght@400;700&display=swap');
+/* Styling the color when the user want to highlight a text */
+::selection{
+    background-color: rgb(253, 230, 197);
+    color: black;
+}
+/* Set the default style of elements*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    scroll-behavior: smooth;
+}
+input:focus{
+    outline: none;
+}
+h1{
+    font-family: 'Poppins', serif;
+} 
+h2, h3, h4, a, li{
+    font-family: 'Noto Sans', sans-serif;
+    color: black;
+    line-height: 1.5;
+}
+p{
+    font-family: 'Noto Sans', sans-serif;
+    color: #777;
+    line-height: 1.6;
+}
+body{
+    width: 100%;
+    max-width: 100%;
+    background-image: url("images/AuthenticationBackground.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+/* CSS styles of login and register form  */
+form{
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    justify-content: center;
+    margin: auto;
+    width: 550px;
+    padding: 12.5px 50px 40px 50px;
+    border-radius: 20px;
+}
+label, input, button{
+    font-family: 'Noto Sans', sans-serif;
+}   
+form h1{
+    margin-top: 40px;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 35px;
+}
+form label{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 16px;
+    margin-top: 12.5px;
+}
+/* CSS Styles of Input Text in Login Page */
+form .input-container input, form .checked-input-container input{
+    width: 100%;
+    padding: 15px 0px 10px 35px;
+    margin-bottom: 15px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    font-size: 16px;
+    transition: border-bottom 0.4s ease;
+}
+.input-container, .checked-input-container{
+    position: relative;
+}
+.input-container i, .checked-input-container i{
+    position: absolute;
+    top: 20%;
+    left: 1%;
+    color: #ccc;
+    transition: color 0.4s ease;
+}
+.input-container .fa-user, .checked-input-container .fa-user{
+    font-size: 24px;
+}
+.input-container .fa-lock, .checked-input-container .fa-lock{
+    font-size: 26px;
+}
+form .input-container input:focus::placeholder{
+    color: transparent;
+}
+form .input-container input:focus{
+    border-bottom: 2px solid rgb(0, 113, 211);
+}
+form .input-container input:focus + i{
+    color: rgb(0, 113, 211);
+}
+form .input-container input:valid{
+    border-bottom: 2px solid rgb(0, 113, 211);
+}
+form .input-container input:valid + i{
+    color: rgb(0, 113, 211);
+}
+/* CSS Styles of password rules list in Register Page */
+#passwordrulelist{
+    margin-top: 5px;
+    padding-left: 10px;
+    list-style-type: square;
+}
+#passwordrulelist li {
+    font-size: 14px;
+    color: #3c3c3c;
+    line-height: 1.75;
+    padding-left: 5px;
+}
+/* CSS Styles of Input Text in Register Page */
+form .checked-input-container input:focus:invalid{
+    border-bottom: 2px solid rgb(211, 11, 0);
+}
+form .checked-input-container input:focus:invalid + i{
+    color: rgb(211, 11, 0);
+}
+form .checked-input-container input:invalid{
+    border-bottom: 2px solid rgb(211, 11, 0);
+}
+form .checked-input-container input:invalid + i{
+    color: rgb(211, 11, 0);
+}
+form .checked-input-container input:valid{
+    border-bottom: 2px solid rgb(2, 143, 0);
+}
+form .checked-input-container input:valid + i{
+    color: rgb(2, 143, 0);
+}
+/* Submit button CSS Styles */
+form button{
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    margin-top: 40px;
+    background-color: rgb(0, 113, 211);
+    border-radius: 25px;
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 10px 0;
+    transition: background-color 0.3s ease;
+}
+form button:hover{
+    background-color: #2b88ec;
+}
+form p{
+    font-size: 16px;
+    width: auto;
+    margin: 20px auto 0 auto;
+    padding-bottom: 10px;
+}
+#backHomeText{
+    margin-top: 10px;
+    padding: 10px 30px;
+    background-color: rgb(0, 134, 71);
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+}

@@ -51,27 +51,34 @@
     /* Open the menu */
     #HamburgerMenuBar:checked ~ nav{
         display: block;
-        width: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
     }
     /* Change the list from flexbox to block to cover full width and rearrange it vertically */
     nav{
         display: none;
     }
     nav ul{
+        display: block;
         width: 100%;
+        text-align: center;
     }
     /* Make an border to clarify the separtion between each links */
     nav ul li{
-        display: block;
+        display: inline-block;
         width: 100%;
+        padding: auto;
         border-top: 2px solid #b6a4a4;
     }
+    nav ul #loginandregister{
+        float: none;
+    }
     nav ul li a{
-        display: inline-block;
+        display: block;
         border-radius: 20px;
         margin: 5px 0;
-        padding: 5px 20px;
-        font-size: 14px;
+        padding: 7px 20px;
+        font-size: 18px;
     }
 }
 /* Media Query for low resolution Tablets, Ipads */
