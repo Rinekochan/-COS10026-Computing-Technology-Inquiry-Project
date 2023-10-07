@@ -10,6 +10,10 @@
 </head>
 <body>
 <?php
+    // The users mustn't access this page directly through URL
+    if (!isset($_POST["ReferenceNumber"])){
+        header ("location: apply.php");
+    }
     include 'phpmailer/PHPMailerAutoload.php';
     // This function sanitise data to remove leading and trailing spaces, backslashes and HTML control characters.
     function sanitise_input($data){
