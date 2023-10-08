@@ -1,6 +1,6 @@
 <!--
     Name/ID: Viet Hoang Pham 104506968
-    Viet Hoang Pham is responsible for dashboard page, login/register page and front-end of manage page
+    Viet Hoang Pham is responsible for enhancements, dashboard page, login/register page and front-end of manage page
     Assignment 2
 -->
 <!DOCTYPE html>
@@ -175,12 +175,12 @@
         <!-- Login form fields (username and password) go here -->
         <label for = "FirstName">First Name</label>
         <div class = "checked-input-container">
-            <input type = "text" id = "FirstName" name = "FirstName" placeholder = "Enter your first name" maxlength = "50" required>
+            <input type = "text" id = "FirstName" name = "FirstName" placeholder = "Enter your first name" pattern = "^[a-zA-Z\s]*$" maxlength = "50" required>
             <i class = "fa fa-user"></i>
         </div>
         <label for = "LastName">Last Name</label>
         <div class = "checked-input-container">
-            <input type = "text" id = "LastName" name = "LastName" placeholder = "Enter your last name" maxlength = "50" required>
+            <input type = "text" id = "LastName" name = "LastName" placeholder = "Enter your last name" maxlength = "50" pattern = "^[a-zA-Z\-\s]*$" required>
             <i class = "fa fa-user"></i>
         </div>
         <label for = "Username">Username</label>
