@@ -1,0 +1,89 @@
+/*Fonts using in this website */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@700&family=PT+Sans:wght@700&family=Pacifico&family=Poppins:wght@400;700&display=swap');
+/* Styling the color when the user want to highlight a text */
+::selection{
+    background-color: rgb(253, 230, 197);
+    color: black;
+}
+/* Set the default style of elements*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    scroll-behavior: smooth;
+}
+h1{
+    font-family: 'Poppins', serif;
+} 
+h2, h3, h4, a{
+    font-family: 'Noto Sans', sans-serif;
+    color: black;
+    line-height: 1.5;
+}
+p{
+    font-family: 'Noto Sans', sans-serif;
+    color: #777;
+    line-height: 1.6;
+}
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* Developer: Viet Hoang Pham. This is processEOI, register message CSS style */
+#errorMessage, #successMessage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 90vh;
+    margin: auto;
+    text-align: center;
+}
+#errorMessage h1{
+    color: red;
+    font-size: 64px;
+    font-weight: bold;
+}
+#errorMessage h2{
+    color: red;
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+#successMessage h1{
+    color: rgb(0, 172, 0);
+    font-size: 64px;
+    font-weight: bold;
+}
+#successMessage h2{
+    color: rgb(0, 172, 0);
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+#successMessage h3{
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+#errorMessage p, #successMessage p{
+    color: black;
+    font-size: 23px;
+    font-weight: 400;
+}
+#errorMessage a, #successMessage a{
+    margin-top: 25px;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 5px 20px;
+    color: white;
+    background-color: #004fa4;
+    border-radius: 25px;
+    border-bottom: 5px solid #007bff;
+    text-decoration: none;
+    transition-duration: 0.5s;
+}
+#errorMessage a:hover, #successMessage a:hover{
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+}

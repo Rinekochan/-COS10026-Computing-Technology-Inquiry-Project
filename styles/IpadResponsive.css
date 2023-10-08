@@ -70,7 +70,8 @@
     }
     nav ul #loginandregister{
         display: block;
-        margin: auto 10px auto 10px;
+        margin: auto 0 auto 0;
+        padding: auto;
     }
     nav ul li a{
         border-radius: 20px;
@@ -99,8 +100,8 @@
         font-size: 27px;
     }
     /* Restyling the Youtube button in the container */
-    #IndexHeaderPage > header a{
-        font-size: 32px;
+    #IndexHeaderPage > header #YoutubeLink a{
+        font-size: 28px;
         padding: 10px 40px;
     }
     /* Restyling the containers of two box under the main content */

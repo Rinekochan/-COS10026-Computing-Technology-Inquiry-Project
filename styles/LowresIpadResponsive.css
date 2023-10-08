@@ -106,9 +106,12 @@
         width: 85%;
         font-size: 27px;
     }
-    /* Restyling the Youtube button*/
-    #IndexHeaderPage > header a{
-        font-size: 32px;
+    /* Restyling the Youtube button in the container */
+    #IndexHeaderPage > header #YoutubeLink{
+        flex-direction: column;
+    }
+    #IndexHeaderPage > header #YoutubeLink a{
+        font-size: 28px;
         padding: 10px 40px;
     }
     /* Restyling the containers of two box under the main content */

@@ -52,7 +52,7 @@ p{
 /* Styling the elements in the menu bar */
 /* Since I am using the flexbox, I don't need to use float */
 #MenuBar img{
-    margin-left: 0%;
+    margin-left: 20%;
     height: auto;
     width: 40%;
 }
@@ -79,9 +79,15 @@ nav ul{
     list-style: none;
 }
 nav ul #loginandregister{
-    margin-right: 25px;
+    padding: 0 20px;
     margin-left: auto;
     float: right;
+    background-color:#004fa4;
+}
+nav ul #loginandregister a:hover{
+    background: #004fa4;
+    color: rgb(222, 240, 255);
+    transform: scale(1.1);
 }
 nav ul li{
     margin: 0;
@@ -101,7 +107,7 @@ nav ul li a{
 }
 /* Making hover effect when hover into a menu link */
 nav ul li a:hover {
-    background: #faebd7;
+    background-color: #faebd7;
     color: black;
 }
 /* Styling the current page box */
@@ -211,21 +217,25 @@ body{
     font-weight: 400;
 }
 /* Styling the Youtube button*/
-#IndexHeaderPage > header  > a{
-    font-size: 40px;
+#IndexHeaderPage > header #YoutubeLink{
+    padding: 0px 0px 40px 0px;
+    display: flex;
+    flex-wrap: wrap;
+}
+#IndexHeaderPage > header #YoutubeLink a{
+    font-size: 36px;
     font-weight: 800;
     text-decoration: none;
-    color: red;
+    color: white;
+    background: red;
     border: 2px solid red;
     border-radius: 18px;
     padding: 10px 45px;
-    margin: 30px 0px;
+    margin: 30px 20px;
     transition-duration: 0.3s;
 }
 /* Hover effect on Youtube button */
-#IndexHeaderPage > header > a:hover{
-    color: white;
-    background: red;
+#IndexHeaderPage > header #YoutubeLink a:hover{
     transform: scale(1.1);
     transition-duration: 0.3s;
 }
@@ -680,7 +690,8 @@ body{
     padding: 2rem;
     margin-bottom: 1rem;
     background-color: #ffffff;
-    border-radius: 5px;
+    border-radius: 10px;
+    box-shadow: 2px 1px 1px #3c3c3c;
     clear: both;
 }
 /* Styling the contents of the job-listing container */
@@ -733,12 +744,10 @@ body{
     font-size: 1.2rem;
     font-weight: 600;
     text-decoration: none;
-    transition-duration: 0.1s;
+    transition: font-size 0.3s ease;
 }
 .apply-button:hover{
-    background-color: #494949;
-    color: #82cdff;
-    transition-duration: 0.1s;
+    font-size: 1.4rem;
 }
 /* End of Job Page styles */
 
@@ -1341,68 +1350,6 @@ dl, dt, dd{
 #BodyIndex:target, #Enhancement1:target, #Enhancement2:target, #ReferenceNumber:target {
     border: 5px solid rgb(255, 0, 111);
 }
-/* ------------------------------------------------------ */
-/* ------------------------------------------------------ */
-/* ------------------------------------------------------ */
-/* Developer: Viet Hoang Pham. This is processEOI CSS style */
-#errorMessage, #successMessage{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 90vh;
-    margin: auto;
-    text-align: center;
-}
-#errorMessage h1{
-    color: red;
-    font-size: 64px;
-    font-weight: bold;
-}
-#errorMessage h2{
-    color: red;
-    font-size: 32px;
-    margin-bottom: 25px;
-}
-#successMessage h1{
-    color: rgb(0, 172, 0);
-    font-size: 64px;
-    font-weight: bold;
-}
-#successMessage h2{
-    color: rgb(0, 172, 0);
-    font-size: 32px;
-    margin-bottom: 30px;
-}
-#successMessage h3{
-    color: rgb(0, 0, 0);
-    font-weight: 600;
-    font-size: 27px;
-    margin-bottom: 15px;
-}
-#errorMessage p, #successMessage p{
-    color: black;
-    font-size: 23px;
-    font-weight: 400;
-}
-#errorMessage a, #successMessage a{
-    margin-top: 25px;
-    font-size: 24px;
-    font-weight: 600;
-    padding: 5px 20px;
-    color: white;
-    background-color: #004fa4;
-    border-radius: 25px;
-    border-bottom: 5px solid #007bff;
-    text-decoration: none;
-    transition-duration: 0.5s;
-}
-#errorMessage a:hover, #successMessage a:hover{
-    transform: scale(1.1);
-    transition-duration: 0.5s;
-}
-
 /* ------------------------------------------------------ */
 /* ------------------------------------------------------ */
 /* ------------------------------------------------------ */

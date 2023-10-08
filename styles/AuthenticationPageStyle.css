@@ -91,7 +91,7 @@ form .input-container input, form .checked-input-container input{
 .input-container .fa-lock, .checked-input-container .fa-lock{
     font-size: 26px;
 }
-form .input-container input:focus::placeholder{
+form input:focus::placeholder{
     color: transparent;
 }
 form .input-container input:focus{
@@ -109,8 +109,9 @@ form .input-container input:valid + i{
 /* CSS Styles of password rules list in Register Page */
 #passwordrulelist{
     margin-top: 5px;
-    padding-left: 10px;
+    padding-left: 17.5px;
     list-style-type: square;
+    font-size: 24px;
 }
 #passwordrulelist li {
     font-size: 14px;
@@ -155,6 +156,7 @@ form button:hover{
     background-color: #2b88ec;
 }
 form p{
+    color: #3c3c3c;
     font-size: 16px;
     width: auto;
     margin: 20px auto 0 auto;
@@ -167,6 +169,22 @@ form p{
     font-size: 20px;
     font-weight: 600;
     border-radius: 20px;
+    box-shadow: 0px 2px 2px rgb(69, 255, 168);
     color: white;
     text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+#backHomeText:hover{
+    background-color: rgb(3, 187, 101);
+}
+#error, #success{
+    font-weight: 600;
+}
+#error{
+    font-size: 18px;
+    color: red;
+}
+#success{
+    font-size: 22px;
+    color: rgb(0, 172, 0);
 }
