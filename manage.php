@@ -8,25 +8,49 @@
 
 <html lang = "en">
 <head>
-    <meta charset="utf-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="This is management page of HPM" >
-    <meta name="keywords" content="Management page" >
+    <meta charset = "utf-8" >
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <meta name = "description" content = "This is management page of HPM" >
+    <meta name = "keywords" content = "Management page" >
     <!-- Developer of this page is Viet Hoang Pham, Humayra Jahan -->
-    <meta name="author" content="Viet Hoang Pham, Humayra Jahan" >
+    <meta name = "author" content = "Viet Hoang Pham, Humayra Jahan" >
     <title>HPM: Management</title>
     <!-- This css file styles manager website -->
     <link rel = "stylesheet" href = "styles/ManagerStyle.css">
     <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel = "shortcut icon" href="images/favicon.png">
+    <link rel = "shortcut icon" href = "images/favicon.png">
 </head>
 <body id = "MainBackground">
+    <?php
+        session_start();
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["logout"])) {
+            // Remove all session variables
+            session_unset();
+
+            // Destroy the session
+            session_destroy(); 
+            // The users have to login again when logout 
+        }
+
+        if(!isset($_SESSION["authenticated"])){
+            header("Location: login.php"); // Redirect to the login page if not authenticated.
+            exit;
+        }
+        if(isset($_SESSION["firstName"]) && isset($_SESSION["lastName"])){
+            $currentName = $_SESSION["firstName"] . " " . $_SESSION["lastName"];
+        } else {
+            $currentName = "Unknown";
+        }
+    ?>
+
     <!--Developer: Viet Hoang Pham. This is Manager Navigation Menu and Header code. You should add this at the start of <body> element-->
     <?php include_once 'managermenuandheader.inc';?>
     <!--End of Navigation Menu Code.-->
+    
     <main>
-        <div id = "DisplayTableData">
-            <form method="POST" action="manage.php">
+        <form method = "POST" action = "manage.php" id = "mainform">
+            <div id = "serverquery">
                 <div id = "deleteJobReference">
                     <label for = "delete">Job Reference</label>
                     <select id = "delete" name = "JobRefNum">
@@ -53,7 +77,7 @@
                     <input type = "text" id = "searchquery" name = "searchquery" placeholder = "Search...">
                     <button type = "submit" name = "search">Search</button>
                 </div>
-            </form>
+            </div>
             <table>
                 <tr id = "tableheader">
                     <th><button type = "submit" name = "sortID">ID <i class = "fa fa-sort"></i></button></th>
@@ -191,6 +215,6 @@
                 <a href = "">Next</a>
                 <a href = "">Last</a>
             </div>
-        </div>
+        </form>
     </main>
 </body>

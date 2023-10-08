@@ -16,10 +16,14 @@
                 echo '<li><a href = "manage.php"><span class = "menuicon"><i class = "fa fa-tasks"></i></span>Management</a></li>';
             }
         echo '</ul>
-        <button>Logout</button>
+        <form method = "POST" action = "" id = "logoutForm">
+            <button type = "submit" name = "logout">Logout</button>
+        </form>
     </nav>
     <header>
-        <p>Welcome <span id = "username">Viet Hoang Pham!</span></p>
-        <button><span class = "menuicon"><i class = "fa fa-sign-out"></i></span>Logout</button>
+        <p>Welcome <span id = "username">' . $currentName . '!</span></p>
+        <form method = "POST" action = "" id = "logoutForm">
+            <button type = "submit" name = "logout"><span class = "menuicon"><i class = "fa fa-sign-out"></i></span>Logout</button>
+        </form>
     </header>';
 ?>

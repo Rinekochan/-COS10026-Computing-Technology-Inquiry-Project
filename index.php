@@ -41,7 +41,10 @@
                 <h1>HPM Company</h1>
                 <h2>The world's leading technology company in manufacturing.</h2>
                 <p>Innovation and creativity requires people from a wide range of backgrounds. We're always seeking for ambitious talents to join our team.</p>
-                <a href = "https://youtu.be/pqaZKxT5mbs">&#9658;</a>
+                <div id = "YoutubeLink">
+                    <a href = "https://youtu.be/pqaZKxT5mbs">Assignment 1</a>
+                    <a href = "https://youtu.be/pqaZKxT5mbs">Assignment 2</a>
+                </div>
             </header>  
             <div>
                 <!-- Separating into two separate containers -->
@@ -66,15 +69,15 @@
             <!-- Explore Career-->
             <div>
                 <!-- Separating into three different containers -->
-                <a href = "jobs.html">
+                <a href = "jobs.php">
                     <h3>JOBS</h3>
                     <p>Don't know where to start? Have a look at available jobs now!</p>
                 </a>
-                <a href = "about.html">
+                <a href = "about.php">
                     <h3>ABOUT</h3>
                     <p>Want to know more about us? Discover your future family!</p>
                 </a>
-                <a href = "apply.html">
+                <a href = "apply.php">
                     <h3>APPLY NOW</h3>
                     <p>Want to be a part of our family? Apply to HPM entreprise now!</p>
                 </a>

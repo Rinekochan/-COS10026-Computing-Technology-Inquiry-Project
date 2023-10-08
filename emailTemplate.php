@@ -64,7 +64,7 @@ function confirmationEmail($firstName, $lastName)
                                 Thank you for applying to <span style = "color: #0078d3; font-weight: bold;">the HPM Company</span>.
                             </p>
                             <p>
-                                We’d like to inform you that we have received your application.
+                                We\'d like to inform you that we have received your application.
                                 Our team is currently reviewing all applications and we are planning to schedule interviews. 
                             </p>
                             <p>    You will receive an email from our team within the next <span style = "color: #f22800; font-weight: bold;">3 working days</span>. 

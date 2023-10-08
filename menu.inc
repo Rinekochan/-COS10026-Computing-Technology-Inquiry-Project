@@ -42,6 +42,7 @@
         echo        '<li><a href = "enhancements.php">Enhancements</a></li>';
                 }
         echo    '<li><a href = "mailto:104506968@student.swin.edu.au">Contact</a></li>
+                <li id = "loginandregister"><a href = "login.php">Login/Register</a></li>
         </ul>
     </nav>';
 ?>

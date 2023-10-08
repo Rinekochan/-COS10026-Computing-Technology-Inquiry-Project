@@ -7,6 +7,7 @@
     <meta name="author" content="Siradanai Inchansuk, Viet Hoang Pham" >
     <title>HPM: Processing Application</title>
     <link rel = "stylesheet" href = "styles/style.css">
+    <link rel = "stylesheet" href = "styles/ErrorMessage.css">
 </head>
 <body>
 <?php
@@ -68,52 +69,37 @@
             throw new Exception('Database connection error: ' . mysqli_connect_error());
         }
         else{
-            $sql_table="eoi";
+            // Create eoi table if it is not existed in the database
+            $sql_table = 'eoi';
             $checkTableSQL = "SHOW TABLES LIKE '$sql_table'";
-            $result = $conn->query($checkTableSQL);
-            if ($result->num_rows == 0) {
+            $result = mysqli_query($conn, $checkTableSQL);
+            if (!$result || mysqli_num_rows($result) == 0) {
                 $createTableSQL = "
-                CREATE TABLE `eoi` (
-                    `EOInumber` int(11) NOT NULL AUTO_INCREMENT,
-                    `JobRefNum` varchar(5) NOT NULL,
-                    `FirstName` varchar(20) NOT NULL,
-                    `LastName` varchar(20) NOT NULL,
-                    `DateOfBirth` date NOT NULL,
-                    `Gender` varchar(6) NOT NULL,
-                    `StreetAddress` varchar(40) NOT NULL,
-                    `SuburbOrTown` varchar(40) NOT NULL,
-                    `State` varchar(3) NOT NULL,
-                    `PostCode` varchar(4) NOT NULL,
-                    `Email` varchar(50) NOT NULL,
-                    `PhoneNumber` varchar(50) NOT NULL,
-                    `DegreeLevel` varchar(4) NOT NULL,
-                    `Degree` varchar(30) NOT NULL,
-                    `Experience` varchar(30) NOT NULL,
-                    `Skills` varchar(40) NOT NULL,
-                    `SkillsDescription` varchar(40) NOT NULL,
-                    `Status` varchar(20) NOT NULL,
-                    PRIMARY KEY (`EOInumber`)
-                )
-                ";
-                try{
-                    if ($conn->query($createTableSQL) === FALSE) {
-                        throw new Exception('Table failed to be created:');
-                    }
-                }
-                catch (Exception $e){
-                    // Handle the exception: display a user-friendly message
-                    echo '
-                    <div id = "errorMessage">
-                        <h1>500</h1>
-                        <h2>Connection Error</h2>
-                        <p>It seems like there are some problems about creating the table.</p>
-                        <p>Please try again. Apologies.</p>
-                        <a href = "apply.php">Back To Apply</a>
-                    </div>';
-                    
+                    CREATE TABLE `eoi` (
+                        `EOInumber` int(11) NOT NULL AUTO_INCREMENT,
+                        `JobRefNum` varchar(5) NOT NULL,
+                        `FirstName` varchar(20) NOT NULL,
+                        `LastName` varchar(20) NOT NULL,
+                        `DateOfBirth` date NOT NULL,
+                        `Gender` varchar(6) NOT NULL,
+                        `StreetAddress` varchar(40) NOT NULL,
+                        `SuburbOrTown` varchar(40) NOT NULL,
+                        `State` varchar(3) NOT NULL,
+                        `PostCode` varchar(4) NOT NULL,
+                        `Email` varchar(50) NOT NULL,
+                        `PhoneNumber` varchar(50) NOT NULL,
+                        `DegreeLevel` varchar(4) NOT NULL,
+                        `Degree` varchar(30) NOT NULL,
+                        `Experience` varchar(30) NOT NULL,
+                        `Skills` varchar(40) NOT NULL,
+                        `SkillsDescription` varchar(40) NOT NULL,
+                        `Status` varchar(20) NOT NULL,
+                        PRIMARY KEY (`EOInumber`)
+                    )";
+                if(!mysqli_query($conn, $createTableSQL)){
+                    throw new Exception('Table creation error: ' . mysqli_connect_error());
                 }
             }
-
             // Validate each data and stores error messages
             $errMsg = "";
             if (isset($_POST["ReferenceNumber"])){
@@ -235,9 +221,7 @@
                 <div id = "errorMessage">
                     <h1>Oops!</h1>
                     <h2>There are some errors in your application form.</h2>
-                    ';
-                echo $errMsg;
-                echo '
+                    ' . $errMsg . '
                     <a href = "apply.php">Back To Apply</a>
                 </div>';
             }
@@ -245,17 +229,18 @@
             else{
                 $sql_table="eoi";
                 $query = "insert into $sql_table (JobRefNum, FirstName, LastName, DateOfBirth, Gender, StreetAddress
-                ,SuburbOrTown, State, Postcode, Email, PhoneNumber, DegreeLevel, Degree, Experience, Skills, SkillsDescription) 
+                ,SuburbOrTown, State, Postcode, Email, PhoneNumber, DegreeLevel, Degree, Experience, Skills, SkillsDescription, Status) 
                 values ('$reference', '$firstName', '$lastName', '$dob', '$gender', '$streetAddress','$suburb','$state_input'
-                , '$postcode', '$email', '$phone', '$degreeLevel', '$degree', '$experience', '$skills', '$description')";
+                , '$postcode', '$email', '$phone', '$degreeLevel', '$degree', '$experience', '$skills', '$description', 'New')";
                 $result = mysqli_query($conn, $query);
                 // Display error page if something is wrong with the query
                 if(!$result){
+                    mysqli_close($conn);
                     echo '
                         <div id = "errorMessage">
-                            <h1>Oops!</h1>
+                            <h1>500</h1>
                             <h2>Something goes wrong</h2>
-                            <p>It seems like there are some problems in the application process.</p>
+                            <p>It seems like there are some problems in the application recording process.</p>
                             <p>Please try again. Apologies.</p>
                             <a href = "apply.php">Back To Apply</a>
                         </div>
@@ -288,7 +273,7 @@
                     $mail->Username   = 'hpminquiry@gmail.com';                     //SMTP username
                     $mail->Password   = 'igdmzvjikrdjqyey';                               //SMTP password
                     $mail->SMTPSecure = 'tls';
-                    $mail->Port       = 587;                      //587 25               
+                    $mail->Port       = 25;                      //587 25               
                     $mail->SMTPOptions = array(
                         'ssl' => array(
                             'verify_peer' => false,
@@ -311,7 +296,7 @@
                     $mail->Body = confirmationEmail($firstName, $lastName);
                     $mail->AltBody = 'Dear ' . $firstName . ' ' . $lastName . ',
                         Thank you for applying to the HPM Company.
-                        We’d like to inform you that we have received your application.
+                        We\'d like to inform you that we have received your application.
                         Our team is currently reviewing all applications and we are planning to schedule interviews. 
                         You will receive an email from our team within the next 3 working days. 
                         In any case, we will keep you updated on your application status.';
@@ -328,13 +313,14 @@
                             <h2>Your application form has been successfully recorded.</h2>
                             <h3>Your EOI Number is <span style = 'color: #f22800; font-weight: bold;'>#$last_id</span>, and your email address is <span style = 'color: #f22800; font-weight: bold;'>$email</span></h3>
                             <p>A confirmation email has been sent to your email address.</p>
-                            <p>If you don’t see the email, please check your spam folder or verify your submitted email address.</p>
+                            <p>If you don't see the email, please check your spam folder or verify your submitted email address.</p>
                             <a href = 'apply.php'>Back To Apply</a>
                         </div>
                         ";
                     }
                     // Show error page if the email failed to send
                     else{
+                        mysqli_close($conn);
                         echo '
                         <div id = "errorMessage">
                             <h1>503</h1>
