@@ -306,32 +306,30 @@
 
                     $last_id = mysqli_insert_id($conn);
                     mysqli_close($conn);
-                    if ($mail->send()){
-                        echo "
-                        <div id = 'successMessage'>
-                            <h1>Success!</h1>
-                            <h2>Your application form has been successfully recorded.</h2>
-                            <h3>Your EOI Number is <span style = 'color: #f22800; font-weight: bold;'>#$last_id</span>, and your email address is <span style = 'color: #f22800; font-weight: bold;'>$email</span></h3>
-                            <p>A confirmation email has been sent to your email address.</p>
-                            <p>If you don't see the email, please check your spam folder or verify your submitted email address.</p>
-                            <a href = 'apply.php'>Back To Apply</a>
-                        </div>
-                        ";
-                    }
-                    // Show error page if the email failed to send
-                    else{
-                        mysqli_close($conn);
-                        echo '
-                        <div id = "errorMessage">
-                            <h1>503</h1>
-                            <h2>Email unsuccessfully sent</h2>
-                            <p>It seems like there are some problems whilst sending the email.</p>
-                            <p>Please verify whether email is valid or not then resubmit the form</p>
-                            <p>If the issue stills persist, please contact hpminquiry@gmail.com</p>.
-                            <a href = "apply.php">Back To Apply</a>
-                        </div>
-                        ';
-                    }
+                    $mail->send();
+                    echo "
+                    <div id = 'successMessage'>
+                        <h1>Success!</h1>
+                        <h2>Your application form has been successfully recorded.</h2>
+                        <h3>Your EOI Number is <span style = 'color: #f22800; font-weight: bold;'>#$last_id</span>, and your email address is <span style = 'color: #f22800; font-weight: bold;'>$email</span></h3>
+                        <p>A confirmation email has been sent to your email address.</p>
+                        <p>If you don't see the email, please check your spam folder or verify your submitted email address.</p>
+                        <p>If the issue stills persist, please contact hpminquiry@gmail.com</p>.
+                        <a href = 'apply.php'>Back To Apply</a>
+                    </div>
+                    ";
+                    // // Show error page if the email failed to send
+                    // else{
+                    //     echo '
+                    //     <div id = "errorMessage">
+                    //         <h1>503</h1>
+                    //         <h2>Email unsuccessfully sent</h2>
+                    //         <p>It seems like there are some problems whilst sending the email.</p>
+                    //         <p>Please verify whether email is valid or not then resubmit the form</p>
+                    //         <a href = "apply.php">Back To Apply</a>
+                    //     </div>
+                    //     ';
+                    // }
                 }
             }
         } 
