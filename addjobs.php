@@ -27,7 +27,7 @@
         exit;
     }
 ?>
-    <form method = "post" action = "" novalidate = "novalidate" id = "addjobs">
+    <form method = "post" action = "addjobs.php" novalidate = "novalidate" id = "addjobs">
         <section class = "center">
             <br>
             <header>
@@ -43,7 +43,7 @@
             </div>
             <!-- Job Title Text Input -->
             <div class = "formBox">
-                <label for = "FirstName">Title</label>
+                <label for = "JobTitle">Title</label>
                 <input type = "text" id = "JobTitle" name = "JobTitle" required = "required" maxlength = "30" pattern = "[A-Za-z\s]{1,30}" placeholder = "Enter job title">
                 <span></span>
             </div>
@@ -78,5 +78,6 @@
             </fieldset>
             <button type = "submit" class = "btnApply">Submit</button>
             <button type = "reset" class = "btnApply">Reset</button>
+        </section>
     </form>
 </body>
