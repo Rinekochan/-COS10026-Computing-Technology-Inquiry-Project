@@ -1,5 +1,5 @@
 <!--
-    Name/ID: Siradanai Inchansuk 104860428, Viet Hoang Pham 104506968
+    Name/ID: Viet Hoang Pham 104506968
     Assignment 2
 -->
 <!DOCTYPE html>
