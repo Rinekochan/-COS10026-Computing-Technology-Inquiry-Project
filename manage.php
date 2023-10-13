@@ -1,6 +1,5 @@
 <!--
     Name/ID: Viet Hoang Pham 104506968, Humayra Jahan 104757245
-    Viet Hoang Pham is responsible for dashboard page, login/register page and front-end, data presentation format of manage page
     Humayra Jahan is responsible for making SQL query statements of manage page 
     Assignment 2
 -->

@@ -15,6 +15,11 @@
             } else {
                 echo '<li><a href = "manage.php"><span class = "menuicon"><i class = "fa fa-tasks"></i></span>Management</a></li>';
             }
+            if($request_uri == '/assign2/jobslist.php'){
+                echo '<li><a href = "jobslist.php" id = "active"><span class = "menuicon"><i class = "fa fa-server"></i></span>Jobs List</a></li>';
+            } else {
+                echo '<li><a href = "jobslist.php"><span class = "menuicon"><i class = "fa fa-server"></i></span>Jobs List</a></li>';
+            }
         echo '</ul>
         <form method = "POST" action = "" id = "logoutForm">
             <button type = "submit" name = "logout">Logout</button>

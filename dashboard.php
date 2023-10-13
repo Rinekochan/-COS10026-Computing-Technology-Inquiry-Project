@@ -1,6 +1,5 @@
 <!--
     Name/ID: Viet Hoang Pham 104506968
-    Viet Hoang Pham is responsible for dashboard page, login/register page and front-end of manage page
     Assignment 2
 -->
 <!DOCTYPE html>
@@ -41,31 +40,89 @@
         } else {
             $currentName = "Unknown";
         }    
+
+        // Disable error display and configure error reporting
+        // error_reporting(0);
+        // ini_set('display_errors', 0);
+        $countNew = 0;
+        $countCurrent = 0;
+        $countFinal = 0;
+        require_once("settings.php");
+        try{
+            $conn = mysqli_connect($host, $user, $pwd, $sql_db);
+
+            if (!$conn) {
+                throw new Exception('Database connection error: ' . mysqli_connect_error());
+            }
+
+            // Check if the username already exists in the database
+            $sql_table = "eoi";
+
+            $countSQL = "SELECT COUNT(Status) AS 'Count' FROM $sql_table WHERE Status = 'New'";
+            $result = mysqli_query($conn, $countSQL);
+            if (!$result) {
+                // Redirect to an error page if there is a connection problem
+                throw new Exception('Table query error: ' . mysqli_connect_error());
+            } 
+            while ($row = mysqli_fetch_assoc($result)) {
+                $countNew = $row['Count'];
+            }
+
+            $countSQL = "SELECT COUNT(Status) AS 'Count' FROM $sql_table WHERE Status = 'Current'";
+            $result = mysqli_query($conn, $countSQL);
+            if (!$result) {
+                // Redirect to an error page if there is a connection problem
+                throw new Exception('Table query error: ' . mysqli_connect_error());
+            } 
+            while ($row = mysqli_fetch_assoc($result)) {
+                $countCurrent = $row['Count'];
+            }
+
+            $countSQL = "SELECT COUNT(Status) AS 'Count' FROM $sql_table WHERE Status = 'Final'";
+            $result = mysqli_query($conn, $countSQL);
+            if (!$result) {
+                // Redirect to an error page if there is a connection problem
+                throw new Exception('Table query error: ' . mysqli_connect_error());
+            } 
+            while ($row = mysqli_fetch_assoc($result)) {
+                $countFinal = $row['Count'];
+            }
+            mysqli_close($conn);
+        }catch (Exception $e) {
+            // Redirect to an error page if there is a connection problem
+            header("location: errorPageForConnection.html");
+        } 
     ?>
     <!--Developer: Viet Hoang Pham. This is Manager Navigation Menu code. You should add this at the start of <body> element-->
     <?php include_once 'managermenuandheader.inc';?>
     <!--End of Navigation Menu Code.-->
-
+    <!-- SELECT COUNT(Status) AS 'New' FROM eoi;  -->
     <main>
         <div id = "Dashboard">
             <article id = "NewAppDashboard">
                 <div>
                     <h2>New Application</h2>
-                    <p>2</p>
+                    <?php
+                    echo "<p>$countNew</p>";
+                    ?>
                 </div>
                 <span class = "dashboardicon"><i class = "fa fa-tasks"></i></span>
             </article>
             <article id = "CurrentAppDashboard">
                 <div>
                     <h2>Current Application</h2>
-                    <p>2</p>
+                    <?php
+                    echo "<p>$countCurrent</p>";
+                    ?>
                 </div>
                 <span class = "dashboardicon"><i class = "fa fa-tasks"></i></span>
             </article>
             <article id = "FinalAppDashboard">
             <div>
                     <h2>Final Application</h2>
-                    <p>2</p>
+                    <?php
+                    echo "<p>$countFinal</p>";
+                    ?>
                 </div>
                 <span class = "dashboardicon"><i class = "fa fa-tasks"></i></span>
             </article>
