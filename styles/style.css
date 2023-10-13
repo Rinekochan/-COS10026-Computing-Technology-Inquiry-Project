@@ -760,6 +760,9 @@ form {
     margin: auto;
     padding: 1rem;
 }
+#addjobs{
+    padding: 0 0 12.5rem 0;
+}
 /* displaying the text, input box, valid and invalid state and */
 .formBox {
     display: grid;
