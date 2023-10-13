@@ -22,15 +22,6 @@
 <?php
     session_start();
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["logout"])) {
-        // Remove all session variables
-        session_unset();
-
-        // Destroy the session
-        session_destroy(); 
-        // The users have to login again when logout 
-    }
-
     if(!isset($_SESSION["authenticated"])){
         header("Location: login.php"); // Redirect to the login page if not authenticated.
         exit;
