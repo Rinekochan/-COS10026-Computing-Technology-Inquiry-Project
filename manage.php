@@ -1,7 +1,7 @@
 <!--
     Name/ID: Viet Hoang Pham 104506968, Humayra Jahan 104757245
-    Viet Hoang Pham is responsible for dashboard page, login/register page and front-end of manage page
-    Humayra Jahan is responsible for back-end of manage page 
+    Viet Hoang Pham is responsible for dashboard page, login/register page and front-end, data presentation format of manage page
+    Humayra Jahan is responsible for making SQL query statements of manage page 
     Assignment 2
 -->
 <!DOCTYPE html>
@@ -41,6 +41,12 @@
             $currentName = $_SESSION["firstName"] . " " . $_SESSION["lastName"];
         } else {
             $currentName = "Unknown";
+        }
+
+        $sql_query = "";
+        $sql_table = "eoi";
+        if($_SERVER["REQUEST_METHOD"] != "POST"){
+            $sql_query = "SELECT * FROM $sql_table";
         }
     ?>
 
@@ -89,119 +95,76 @@
                     <th>More</th>
                     <th>Delete</th>
                 </tr>
-                <tr>
-                    <td class = "mainTextName">#1</td>
-                    <td>
-                        <p class = "mainTextName">Viet Hoang Pham <i class = "fa fa-mars"></i></p>
-                        <p class = "subText">banana@gmail.com - 0123456789</p>
-                    </td>
-                    <td>18</td>
-                    <td>
-                        <p class = "mainText">IT Project Manager</p>
-                        <p class = "subText">00100</p>
-                    </td>
-                    <td>
-                        <p class = "mainText">5 Ohio Drive</p>
-                        <p class = "subText">CBD, VIC, 3100</p>
-                    </td>
-                    <td><span class = "statusNew">New</span></td>
-                    <td><span class = "editButton"><i class = "fa fa-edit"></i></span></td>
-                    <td class = "deleteButton"><span class = "deleteButton"><i class = "fa fa-trash"></i></span></td>
-                </tr>
-                <tr>
-                    <td class = "mainTextName">#2</td>
-                    <td>
-                        <p class = "mainTextName">Siradanai Inchansuk <i class = "fa fa-mars"></i></p>
-                        <p class = "subText">banana@gmail.com - 0123456789</p>
-                    </td>
-                    <td>19</td>
-                    <td>
-                        <p class = "mainText">Software Developer</p>
-                        <p class = "subText">00001</p>
-                    </td>
-                    <td>
-                        <p class = "mainText">6 Ohio Drive</p>
-                        <p class = "subText">CBD, VIC, 3100</p>
-                    </td>
-                    <td><span class = "statusFinal">Final</span></td>
-                    <td><span class = "editButton"><i class = "fa fa-edit"></i></span></td>
-                    <td><span class = "deleteButton"><i class = "fa fa-trash"></i></span></td>
-                </tr>
-                <tr>
-                    <td class = "mainTextName">#3</td>
-                    <td>
-                        <p class = "mainTextName">Someone <i class = "fa fa-question-circle"></i></p>
-                        <p class = "subText">banana@gmail.com - 0123456789</p>
-                    </td>
-                    <td>56</td>
-                    <td>
-                        <p class = "mainText">Network Administrator</p>
-                        <p class = "subText">00010</p>
-                    </td>
-                    <td>
-                        <p class = "mainText">7 Ohio Drive</p>
-                        <p class = "subText">CBD, VIC, 3100</p>
-                    </td>
-                    <td><span class = "statusCurrent">Current</span></td>
-                    <td><span class = "editButton"><i class = "fa fa-edit"></i></span></td>   
-                    <td><span class = "deleteButton"><i class = "fa fa-trash"></i></span></td>
-                </tr>
-                    <td class = "mainTextName">#4</td>
-                    <td>
-                        <p class = "mainTextName">Viet Hoang Pham <i class = "fa fa-mars"></i></p>
-                        <p class = "subText">banana@gmail.com - 0123456789</p>
-                    </td>
-                    <td>18</td>
-                    <td>
-                        <p class = "mainText">IT Project Manager</p>
-                        <p class = "subText">00100</p>
-                    </td>
-                    <td>
-                        <p class = "mainText">5 Ohio Drive</p>
-                        <p class = "subText">CBD, VIC, 3100</p>
-                    </td>
-                    <td><span class = "statusNew">New</span></td>
-                    <td><span class = "editButton"><i class = "fa fa-edit"></i></span></td>
-                    <td class = "deleteButton"><span class = "deleteButton"><i class = "fa fa-trash"></i></span></td>
-                </tr>
-                <tr>
-                    <td class = "mainTextName">#5</td>
-                    <td>
-                        <p class = "mainTextName">Siradanai Inchansuk <i class = "fa fa-mars"></i></p>
-                        <p class = "subText">banana@gmail.com - 0123456789</p>
-                    </td>
-                    <td>19</td>
-                    <td>
-                        <p class = "mainText">Data Analyst</p>
-                        <p class = "subText">00101</p>
-                    </td>
-                    <td>
-                        <p class = "mainText">6 Ohio Drive</p>
-                        <p class = "subText">CBD, VIC, 3100</p>
-                    </td>
-                    <td><span class = "statusFinal">Final</span></td>
-                    <td><span class = "editButton"><i class = "fa fa-edit"></i></span></td>
-                    <td><span class = "deleteButton"><i class = "fa fa-trash"></i></span></td>
-                </tr>
-                <tr>
-                    <td class = "mainTextName">#6</td>
-                    <td>
-                        <p class = "mainTextName">Humayra Jahan <i class = "fa fa-venus"></i></p>
-                        <p class = "subText">banana@gmail.com - 0123456789</p>
-                    </td>
-                    <td>18</td>
-                    <td>
-                        <p class = "mainText">Cyber Security Analyst</p>
-                        <p class = "subText">00011</p>
-                    </td>
-                    <td>
-                        <p class = "mainText">124 Station Street</p>
-                        <p class = "subText">Box Hill, VIC, 3169</p>
-                    </td>
-                    <td><span class = "statusCurrent">Current</span></td>
-                    <td><span class = "editButton"><i class = "fa fa-edit"></i></span></td>   
-                    <td><span class = "deleteButton"><i class = "fa fa-trash"></i></span></td>
-                </tr>
+                    <?php
+                        require_once("settings.php");
+                        try{
+                            // Attempt to connect to the database
+                            $conn = mysqli_connect($host, $user, $pwd, $sql_db);
+            
+                            if (!$conn){
+                                // Throw Exception if connection fail
+                                throw new Exception('Database connection error: ' . mysqli_connect_error());
+                            }
+
+                            $result = mysqli_query($conn, $sql_query);
+                            if (!$result) {
+                                // Redirect to an error page if there is a connection problem
+                                throw new Exception('Table query error: ' . mysqli_connect_error());
+                            } 
+
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                $EOInumber = $row['EOInumber'];
+
+                                $fullName = $row['FirstName'] . " " . $row['LastName'];
+                                $gender = $row['Gender'];
+                                if ($gender == "male") $genderSign = " <i class = 'fa fa-mars'></i>";
+                                elseif ($gender == "female") $genderSign = " <i class = 'fa fa-venus'></i>";
+                                else $genderSign = " <i class = 'fa fa-question-circle'></i>";
+                                $contactInfo = $row['Email'] . " - " . $row['PhoneNumber'];
+
+                                $dob = $row['DateOfBirth'];
+                                $age = date_diff(date_create($dob), date_create('now'))->y;
+
+                                $reference = $row['JobRefNum'];
+                                if($reference == "00001") $jobTitle = "Software Developer";
+                                elseif($reference == "00010") $jobTitle = "Network Administrator";
+                                elseif($reference == "00011") $jobTitle = "Cyber Security Analyst";
+                                elseif($reference == "00100") $jobTitle = "IT Project Manager";
+                                elseif($reference == "00101") $jobTitle = "Data Analyst";
+
+                                $streetAddress = $row['StreetAddress'];
+                                $addressInfo = $row['SuburbOrTown'] . ", " . $row['State'] . ", " . $row['PostCode'];
+
+                                $status = $row['Status'];
+                                if ($status == "New") $statusColor = 'statusNew';
+                                elseif ($status == "Current") $statusColor = 'statusCurrent';
+                                else $statusColor = 'statusFinal';
+                                echo"<tr>
+                                        <td class = 'mainTextName'> $EOInumber </td>
+                                        <td>
+                                            <p class = 'mainTextName'>$fullName $genderSign</p>
+                                            <p class = 'subText'>$contactInfo</p>
+                                        </td>
+                                        <td>$age</td>
+                                        <td>
+                                            <p class = 'mainText'>$jobTitle</p>
+                                            <p class = 'subText'>$reference</p>
+                                        </td>
+                                        <td>
+                                            <p class = 'mainText'>$streetAddress</p>
+                                            <p class = 'subText'>$addressInfo</p>
+                                        </td>
+                                        <td><span class = $statusColor>$status</span></td>
+                                        <td><span class = 'editButton'><i class = 'fa fa-edit'></i></span></td>
+                                        <td class = 'deleteButton'><span class = 'deleteButton'><i class = 'fa fa-trash'></i></span></td>
+                                    </tr>";
+                            }
+                            mysqli_close($conn);
+                        }catch(Exception $e) {
+                            // Redirect to an error page if there is a connection problem
+                            header ("location: errorPageForConnection.html");
+                        }
+                    ?>
             </table>
             <!-- Pagination of the manage page -->
             <div id = "pagination">
