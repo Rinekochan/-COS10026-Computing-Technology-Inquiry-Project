@@ -1,6 +1,5 @@
 <!--
     Name/ID: Viet Hoang Pham 104506968
-    Viet Hoang Pham is responsible for dashboard page, login/register page and front-end of manage page
     Assignment 2
 -->
 <!DOCTYPE html>
@@ -28,22 +27,21 @@
             exit;
         }
         // Define maximum login attempts and lockout duration
-        $maxLoginAttempts = 5;
-        $lockoutDuration = 600; // (10 minutes) lockout duration
+        $maxLoginAttempts = 3;
+        $lockoutDuration = 60; // (1 minute) lockout duration
 
         $errMsg = "";
         $block = false;
         // Disable error display and configure error reporting
         error_reporting(0);
         ini_set('display_errors', 0);
-
         if(isset($_SESSION['lockoutTime']) && $_SESSION['lockoutTime'] <= time()){
             // Remove all session variables
             session_unset();
         }
 
         if(isset($_SESSION['lockoutTime']) && $_SESSION['lockoutTime'] > time()){
-            $errMsg = "<p id = 'error'>Too many login attempts. Please wait 10 minutes.</p>";
+            $errMsg = "<p id = 'error'>Too many login attempts. Please wait 1 minute.</p>";
             $block = true;
         }
 
@@ -75,7 +73,7 @@
             // ],
             require_once("password_compat/lib/password.php");
             try{
-                $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
+                $conn = mysqli_connect($host, $user, $pwd, $sql_db);
 
                 if (!$conn) {
                     throw new Exception('Database connection error: ' . mysqli_connect_error());
@@ -158,7 +156,7 @@
                 }
             }catch (Exception $e) {
                 // Redirect to an error page if there is a connection problem
-                header("location: errorPageForAuthentication.html");
+                header("location: errorPageForConnection.html");
             } 
         }
     ?>

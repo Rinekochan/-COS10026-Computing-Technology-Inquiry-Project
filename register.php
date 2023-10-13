@@ -1,6 +1,5 @@
 <!--
-    Name/ID: Viet Hoang Pham 104506968
-    Viet Hoang Pham is responsible for enhancements, dashboard page, login/register page and front-end of manage page
+    Name/ID: Siradanai Inchansuk 104860428, Viet Hoang Pham 104506968
     Assignment 2
 -->
 <!DOCTYPE html>
@@ -94,7 +93,7 @@
             require_once("password_compat/lib/password.php");
             try{
                 // Attempt to connect to the database
-                $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
+                $conn = mysqli_connect($host, $user, $pwd, $sql_db);
 
                 if (!$conn){
                     // Throw Exception if connection fail
@@ -152,11 +151,11 @@
                 }
             }catch (Exception $e) {
                 // Redirect to an error page if there is a connection problem
-                header ("location: errorPageForAuthentication.html");
+                header ("location: errorPageForConnection.html");
             }
         }        
     ?>
-    <form method = "post" action = "register.php">
+    <form method = "post" action = "register.php" novalidate = "novalidate">
         <p><a href = "index.php" id = "backHomeText">Home <i class = "fa fa-home"></i></a></p>
         <h1>Sign Up</h1>
         <?php
