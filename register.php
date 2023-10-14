@@ -78,19 +78,6 @@
             }
 
             require_once("settings.php");
-            // "name": "ircmaxell/password-compat",
-            // "description": "A compatibility library for the proposed simplified password hashing algorithm: https://wiki.php.net/rfc/password_hash",
-            // "keywords": ["password", "hashing"],
-            // "homepage": "https://github.com/ircmaxell/password_compat",
-            // "license": "MIT",
-            // "authors": [
-            //     {
-            //         "name": "Anthony Ferrara",
-            //         "email": "ircmaxell@php.net",
-            //         "homepage": "http://blog.ircmaxell.com"
-            //     }
-            // ],
-            require_once("password_compat/lib/password.php");
             try{
                 // Attempt to connect to the database
                 $conn = mysqli_connect($host, $user, $pwd, $sql_db);
@@ -136,7 +123,7 @@
 
                 if($errMsgFirstName == "" && $errMsgLastName == "" && $errMsgUsername == "" && $errMsgPassword == ""){
                     // Hash the passwords before storing them in the database
-                    $hashedPassword = password_hash($submittedPassword, PASSWORD_DEFAULT);
+                    $hashedPassword = md5($submittedPassword);
                     $sql_table = "users";
                     $query = "insert into $sql_table (FirstName, LastName, Username, Password) values ('$submittedFirstName','$submittedLastName','$submittedUsername', '$hashedPassword')";
                     $result = mysqli_query($conn, $query);
