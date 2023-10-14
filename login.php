@@ -59,19 +59,6 @@
             $submittedPassword = sanitise_input($_POST["Password"]);
 
             require_once("settings.php");
-            //  "name": "ircmaxell/password-compat",
-            // "description": "A compatibility library for the proposed simplified password hashing algorithm: https://wiki.php.net/rfc/password_hash",
-            // "keywords": ["password", "hashing"],
-            // "homepage": "https://github.com/ircmaxell/password_compat",
-            // "license": "MIT",
-            // "authors": [
-            //     {
-            //         "name": "Anthony Ferrara",
-            //         "email": "ircmaxell@php.net",
-            //         "homepage": "http://blog.ircmaxell.com"
-            //     }
-            // ],
-            require_once("password_compat/lib/password.php");
             try{
                 $conn = mysqli_connect($host, $user, $pwd, $sql_db);
 
@@ -110,9 +97,10 @@
 
                 if(mysqli_num_rows($result) == 1){
                     // User found, retrieve data
+                    $checkingPassword = md5($submittedPassword);
                     $userRow = mysqli_fetch_assoc($result);
                     // Verify submitted password with hashed password
-                    if (password_verify($submittedPassword, $userRow["Password"])) {
+                    if ($checkingPassword === $userRow["Password"]) {
                         // Authentication successful, set session variables on and redirect to manager page
                         mysqli_close($conn);
                         $_SESSION["authenticated"] = true;
