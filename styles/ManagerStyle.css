@@ -283,8 +283,11 @@ table #tableheader th button{
     border: none;
     background-color: transparent;
 }
-table #tableheader th #active{
+table #tableheader th #activeASC{
     color:rgb(81, 174, 255);
+}
+table #tableheader th #activeDESC{
+    color:rgb(108, 255, 147);
 }
 table #tableheader th button:hover{
     text-decoration: underline;
