@@ -53,31 +53,87 @@
         if($_SERVER["REQUEST_METHOD"] != "POST"){
             $sql_query = "SELECT * FROM $sql_table";
             $currentID = 'active';
+            $_SESSION["currentSort"] = "sortID";
+            $_SESSION["sortOrder"] = "ASC";
         } else {
             if (isset($_POST["sortID"])) {
-                // Sort by ID
-                $sql_query = "SELECT * FROM $sql_table ORDER BY EOInumber ASC";
-                $currentID = 'active';
+                // Sort by ID, toggle ascending and descending order
+                if(isset($_SESSION["currentSort"]) && $_SESSION["currentSort"] == "sortID" && $_SESSION["sortOrder"] == "ASC"){
+                    $sql_query = "SELECT * FROM $sql_table ORDER BY EOInumber DESC";
+                    $currentID = 'activeDESC';
+                    $_SESSION["currentSort"] = "sortID";
+                    $_SESSION["sortOrder"] = "DESC";
+                } else {
+                    $sql_query = "SELECT * FROM $sql_table ORDER BY EOInumber ASC";
+                    $currentID = 'activeASC';
+                    $_SESSION["currentSort"] = "sortID";
+                    $_SESSION["sortOrder"] = "ASC";
+                }
             } elseif (isset($_POST["sortName"])) {
-                // Sort by Applicants' Name
-                $sql_query = "SELECT * FROM $sql_table ORDER BY FirstName, LastName ASC";
-                $currentApplicants = 'active';
+                // Sort by Applicants' Name, toggle ascending and descending order
+                if(isset($_SESSION["currentSort"]) && $_SESSION["currentSort"] == "sortName" && $_SESSION["sortOrder"] == "ASC"){
+                    $sql_query = "SELECT * FROM $sql_table ORDER BY FirstName, LastName DESC";
+                    $currentApplicants = 'activeDESC';
+                    $_SESSION["currentSort"] = "sortName";
+                    $_SESSION["sortOrder"] = "DESC";
+                } else {
+                    $sql_query = "SELECT * FROM $sql_table ORDER BY FirstName, LastName ASC";
+                    $currentApplicants = 'activeASC';
+                    $_SESSION["currentSort"] = "sortName";
+                    $_SESSION["sortOrder"] = "ASC";
+                }
             } elseif (isset($_POST["sortAge"])) {
-                // Sort by Age
-                $sql_query = "SELECT * FROM $sql_table ORDER BY DateOfBirth ASC";
-                $currentAge = 'active';
+                // Sort by Age, toggle ascending and descending order
+                if(isset($_SESSION["currentSort"]) && $_SESSION["currentSort"] == "sortAge" && $_SESSION["sortOrder"] == "ASC"){
+                    $sql_query = "SELECT * FROM $sql_table ORDER BY DateOfBirth DESC";
+                    $currentAge = 'activeDESC';
+                    $_SESSION["currentSort"] = "sortAge";
+                    $_SESSION["sortOrder"] = "DESC";
+                } else {
+                    $sql_query = "SELECT * FROM $sql_table ORDER BY DateOfBirth ASC";
+                    $currentAge = 'activeASC';
+                    $_SESSION["currentSort"] = "sortAge";
+                    $_SESSION["sortOrder"] = "ASC";
+                }
             } elseif (isset($_POST["sortJob"])) {
-                // Sort by Preferred Job
-                $sql_query = "SELECT * FROM $sql_table ORDER BY JobRefNum ASC";
-                $currentJob = 'active';
+                // Sort by Preferred Job, toggle ascending and descending order
+                if(isset($_SESSION["currentSort"]) &&$_SESSION["currentSort"] == "sortJob" && $_SESSION["sortOrder"] == "ASC"){
+                    $sql_query = "SELECT * FROM $sql_table ORDER BY JobRefNum DESC";
+                    $currentJob = 'activeDESC';
+                    $_SESSION["currentSort"] = "sortJob";
+                    $_SESSION["sortOrder"] = "DESC";
+                } else {
+                    $sql_query = "SELECT * FROM $sql_table ORDER BY JobRefNum ASC";
+                    $currentJob = 'activeASC';
+                    $_SESSION["currentSort"] = "sortJob";
+                    $_SESSION["sortOrder"] = "ASC";
+                }
             } elseif (isset($_POST["sortAdd"])) {
-                // Sort by Address
-                $sql_query = "SELECT * FROM $sql_table ORDER BY SuburbOrTown, State, PostCode ASC";
-                $currentAddress = 'active';
+                // Sort by Address, toggle ascending and descending order
+                if(isset($_SESSION["currentSort"]) && $_SESSION["currentSort"] == "sortAdd" && $_SESSION["sortOrder"] == "ASC"){
+                    $sql_query = "SELECT * FROM $sql_table ORDER BY SuburbOrTown, State, PostCode DESC";
+                    $currentAddress = 'activeDESC';
+                    $_SESSION["currentSort"] = "sortAdd";
+                    $_SESSION["sortOrder"] = "DESC";
+                } else {
+                    $sql_query = "SELECT * FROM $sql_table ORDER BY SuburbOrTown, State, PostCode ASC";
+                    $currentAddress = 'activeASC';
+                    $_SESSION["currentSort"] = "sortAdd";
+                    $_SESSION["sortOrder"] = "ASC";
+                }
             } elseif (isset($_POST["sortStatus"])) {
-                // Sort by Status
-                $sql_query = "SELECT * FROM $sql_table ORDER BY Status ASC";
-                $currentStatus = 'active';
+                // Sort by Status, toggle ascending and descending order
+                if(isset($_SESSION["currentSort"]) && $_SESSION["currentSort"] == "sortStatus" && $_SESSION["sortOrder"] == "ASC"){
+                    $sql_query = "SELECT * FROM $sql_table ORDER BY Status DESC";
+                    $currentStatus = 'activeDESC';
+                    $_SESSION["currentSort"] = "sortStatus";
+                    $_SESSION["sortOrder"] = "DESC";
+                } else {
+                    $sql_query = "SELECT * FROM $sql_table ORDER BY Status ASC";
+                    $currentStatus = 'activeASC';
+                    $_SESSION["currentSort"] = "sortStatus";
+                    $_SESSION["sortOrder"] = "ASC";
+                }
             }
             // Add similar conditions for other sorting options
         }
