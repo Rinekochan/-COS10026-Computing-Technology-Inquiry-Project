@@ -41,10 +41,12 @@
         } else {
             $currentName = "Unknown";
         }
-        
+
         $sql_query = "";
         $sql_table = "eoi";
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if($_SERVER["REQUEST_METHOD"] != "POST"){
+            $sql_query = "SELECT * FROM $sql_table";
+        } else {
             if (isset($_POST["sortID"])) {
                 // Sort by ID
                 $sql_query = "SELECT * FROM $sql_table ORDER BY EOInumber ASC";
@@ -57,7 +59,7 @@
             } elseif (isset($_POST["sortJob"])) {
                 // Sort by Preferred Job
                 $sql_query = "SELECT * FROM $sql_table ORDER BY JobRefNum ASC";
-            } elseif (isset($_POST["sortAdd")) {
+            } elseif (isset($_POST["sortAdd"])) {
                 // Sort by Address
                 $sql_query = "SELECT * FROM $sql_table ORDER BY SuburbOrTown, State, PostCode ASC";
             } elseif (isset($_POST["sortStatus"])) {
@@ -65,9 +67,8 @@
                 $sql_query = "SELECT * FROM $sql_table ORDER BY Status ASC";
             }
             // Add similar conditions for other sorting options
-        }        
-        ?>
-        
+        }
+    ?>
 
     <!--Developer: Viet Hoang Pham. This is Manager Navigation Menu and Header code. You should add this at the start of <body> element-->
     <?php include_once 'managermenuandheader.inc';?>
@@ -111,7 +112,7 @@
                     <th><button type = "submit" name = "sortJob">Preferred Job <i class = "fa fa-sort"></i></button></th>
                     <th><button type = "submit" name = "sortAdd">Address <i class = "fa fa-sort"></i></button></th>
                     <th><button type = "submit" name = "sortStatus">Status <i class = "fa fa-sort"></i></button></th>
-                    <th>More</th>
+                    <th>More/Edit</th>
                     <th>Delete</th>
                 </tr>
                     <?php
@@ -139,8 +140,13 @@
                                 if ($gender == "male") $genderSign = " <i class = 'fa fa-mars'></i>";
                                 elseif ($gender == "female") $genderSign = " <i class = 'fa fa-venus'></i>";
                                 else $genderSign = " <i class = 'fa fa-question-circle'></i>";
-                                $contactInfo = $row['Email'] . " - " . $row['PhoneNumber'];
 
+                                // This block of code is convert the format of phone number to the format of "0123 456 789" consistently
+                                $originalPhoneNumber = $row['PhoneNumber'];
+                                $unformattedPhoneNumber = str_replace(' ', '', $originalPhoneNumber);
+                                $phoneNumber = substr($unformattedPhoneNumber, 0, 4) . ' ' . substr($unformattedPhoneNumber, 4, 3) . ' ' . substr($unformattedPhoneNumber, 7);
+                                $contactInfo = $row['Email'] . " - " . $phoneNumber;
+                                
                                 $dob = $row['DateOfBirth'];
                                 $age = date_diff(date_create($dob), date_create('now'))->y;
 
@@ -174,8 +180,8 @@
                                             <p class = 'subText'>$addressInfo</p>
                                         </td>
                                         <td><span class = $statusColor>$status</span></td>
-                                        <td><span class = 'editButton'><i class = 'fa fa-edit'></i></span></td>
-                                        <td class = 'deleteButton'><span class = 'deleteButton'><i class = 'fa fa-trash'></i></span></td>
+                                        <td class = 'editContainer'><a href = 'edit.php?id=$EOInumber'><span class = 'editButton'><i class = 'fa fa-edit'></i></span><p>'</p></a></td>
+                                        <td class = 'deleteContainer'><a href = 'delete.php?id=$EOInumber'><span class = 'deleteButton'><i class = 'fa fa-trash'></i></span><p>'</p></a></td>
                                     </tr>";
                             }
                             mysqli_close($conn);
