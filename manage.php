@@ -41,13 +41,33 @@
         } else {
             $currentName = "Unknown";
         }
-
+        
         $sql_query = "";
         $sql_table = "eoi";
-        if($_SERVER["REQUEST_METHOD"] != "POST"){
-            $sql_query = "SELECT * FROM $sql_table";
-        }
-    ?>
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if (isset($_POST["sortID"])) {
+                // Sort by ID
+                $sql_query = "SELECT * FROM $sql_table ORDER BY EOInumber ASC";
+            } elseif (isset($_POST["sortName"])) {
+                // Sort by Applicants' Name
+                $sql_query = "SELECT * FROM $sql_table ORDER BY FirstName, LastName ASC";
+            } elseif (isset($_POST["sortAge"])) {
+                // Sort by Age
+                $sql_query = "SELECT * FROM $sql_table ORDER BY DateOfBirth ASC";
+            } elseif (isset($_POST["sortJob"])) {
+                // Sort by Preferred Job
+                $sql_query = "SELECT * FROM $sql_table ORDER BY JobRefNum ASC";
+            } elseif (isset($_POST["sortAdd")) {
+                // Sort by Address
+                $sql_query = "SELECT * FROM $sql_table ORDER BY SuburbOrTown, State, PostCode ASC";
+            } elseif (isset($_POST["sortStatus"])) {
+                // Sort by Status
+                $sql_query = "SELECT * FROM $sql_table ORDER BY Status ASC";
+            }
+            // Add similar conditions for other sorting options
+        }        
+        ?>
+        
 
     <!--Developer: Viet Hoang Pham. This is Manager Navigation Menu and Header code. You should add this at the start of <body> element-->
     <?php include_once 'managermenuandheader.inc';?>
