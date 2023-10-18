@@ -209,7 +209,11 @@ input::placeholder{
     border: none;
     transition-duration: 0.2s;
 }
-#mainform button:hover{
+#searchQuery button:hover{
+    background-color:#177ecd;
+    transition-duration: 0.2s;
+}
+#deleteJobReference button:hover{
     background-color:#177ecd;
     transition-duration: 0.2s;
 }
@@ -279,6 +283,12 @@ table #tableheader th button{
     border: none;
     background-color: transparent;
 }
+table #tableheader th #active{
+    color:rgb(81, 174, 255);
+}
+table #tableheader th button:hover{
+    text-decoration: underline;
+}
 table #tableheader th{
     font-size: 20px;
     color: white;
@@ -318,6 +328,12 @@ table #tableheader th{
 .editButton{
     font-size: 24px;
     color: #077ad1;
+}
+.editContainer p{
+    display: none;
+}
+.deleteContainer p{
+    display: none;
 }
 /* Status CSS styles */
 .statusNew, .statusCurrent, .statusFinal{
@@ -435,4 +451,126 @@ table #tableheader th{
 }
 #Dashboard article:nth-child(3) .dashboardicon{
     color: rgb(0, 85, 159);
+}
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* Developer: Viet Hoang Pham. This is Edit page CSS style */
+#editHeader{
+    text-align: center;
+    margin: 50px 0 10px 0;
+    font-size: 32px;
+    color: red;
+}
+#notification{
+    text-align: center;
+    margin: 20px 0 10px 0;
+    font-size: 24px;
+    color: rgb(1, 154, 1);
+}
+#mainform fieldset{
+    width: 80%;
+    margin: 30px auto 30px auto;
+    border-radius: 5px;
+    padding-left: 40px;
+}
+#mainform fieldset > legend{
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}
+#applicantDetails{
+    padding: 10px 0;
+    border-color: #0068b8;
+    color: #0068b8;
+}
+#applicantDetails p{
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 7.5px 0;
+}
+.applicantHeader{
+    font-size: 18px;
+    font-weight: 600;
+    color: #0068b8;
+}
+.applicantBox p{
+    display: inline;
+    margin: 5px 0;
+}
+.applicantBox{
+    display: grid;
+    grid-template-columns: 400px 500px;
+}
+
+#interviewPlan{
+    border-color: rgb(128, 109, 0);
+    color: rgb(128, 109, 0);
+}
+#interviewPlan .interviewBox{
+    display: grid;
+    grid-template-columns: 200px 350px 0;
+    gap: 1rem;
+    margin: 20px 0;
+}
+#interviewPlan .interviewBox label{
+    height: 35px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(128, 109, 0);
+}
+input, textarea{
+    font-size: 14px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 500;
+    color: #555;
+    padding: 5px 10px;
+    margin: 0;
+    border-radius: 5px;
+    border: 2px inset rgb(189, 164, 0);
+}
+#mainform #editquery{
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 0 20px 0;
+    width: 82.5%;
+    margin: auto;
+    align-items: center;
+}
+#editquery a{
+    background-color:#0961a5;
+    color: white;
+    font-size: 17px;
+    font-weight: 700;
+    transition-duration: 0.2s;
+    width: 100px;
+    padding: 12.5px 0;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 15px;
+    transition-duration: 0.2s;
+}
+#editquery #accept{
+    background-color:rgb(0, 122, 0);
+    padding: 0 20px;
+    margin: 0 15px;
+    transition-duration: 0.2s;
+}
+#editquery #reject{
+    background-color: rgb(217, 1, 1);
+    padding: 0 20px;
+    margin: 0 15px;
+    transition-duration: 0.2s;
+}
+#editquery #interview{
+    background-color:rgb(128, 109, 0);
+    padding: 0 20px;
+    margin: 0 15px;
+    transition-duration: 0.2s;
+}
+#editquery a:hover, #editquery button:hover{
+    transform: scale(1.075);
 }
