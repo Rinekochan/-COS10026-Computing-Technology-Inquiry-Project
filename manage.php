@@ -72,12 +72,12 @@
             } elseif (isset($_POST["sortName"])) {
                 // Sort by Applicants' Name, toggle ascending and descending order
                 if(isset($_SESSION["currentSort"]) && $_SESSION["currentSort"] == "sortName" && $_SESSION["sortOrder"] == "ASC"){
-                    $sql_query = "SELECT * FROM $sql_table ORDER BY FirstName, LastName DESC";
+                    $sql_query = "SELECT * FROM $sql_table ORDER BY FirstName DESC";
                     $currentApplicants = 'activeDESC';
                     $_SESSION["currentSort"] = "sortName";
                     $_SESSION["sortOrder"] = "DESC";
                 } else {
-                    $sql_query = "SELECT * FROM $sql_table ORDER BY FirstName, LastName ASC";
+                    $sql_query = "SELECT * FROM $sql_table ORDER BY FirstName ASC";
                     $currentApplicants = 'activeASC';
                     $_SESSION["currentSort"] = "sortName";
                     $_SESSION["sortOrder"] = "ASC";
