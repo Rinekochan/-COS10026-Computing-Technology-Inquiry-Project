@@ -44,27 +44,40 @@
 
         $sql_query = "";
         $sql_table = "eoi";
+        $currentID = 'unactive';
+        $currentApplicants = 'unactive';
+        $currentAge = 'unactive';
+        $currentJob = 'unactive';
+        $currentAddress = 'unactive';
+        $currentStatus = 'unactive';
         if($_SERVER["REQUEST_METHOD"] != "POST"){
             $sql_query = "SELECT * FROM $sql_table";
+            $currentID = 'active';
         } else {
             if (isset($_POST["sortID"])) {
                 // Sort by ID
                 $sql_query = "SELECT * FROM $sql_table ORDER BY EOInumber ASC";
+                $currentID = 'active';
             } elseif (isset($_POST["sortName"])) {
                 // Sort by Applicants' Name
                 $sql_query = "SELECT * FROM $sql_table ORDER BY FirstName, LastName ASC";
+                $currentApplicants = 'active';
             } elseif (isset($_POST["sortAge"])) {
                 // Sort by Age
                 $sql_query = "SELECT * FROM $sql_table ORDER BY DateOfBirth ASC";
+                $currentAge = 'active';
             } elseif (isset($_POST["sortJob"])) {
                 // Sort by Preferred Job
                 $sql_query = "SELECT * FROM $sql_table ORDER BY JobRefNum ASC";
+                $currentJob = 'active';
             } elseif (isset($_POST["sortAdd"])) {
                 // Sort by Address
                 $sql_query = "SELECT * FROM $sql_table ORDER BY SuburbOrTown, State, PostCode ASC";
+                $currentAddress = 'active';
             } elseif (isset($_POST["sortStatus"])) {
                 // Sort by Status
                 $sql_query = "SELECT * FROM $sql_table ORDER BY Status ASC";
+                $currentStatus = 'active';
             }
             // Add similar conditions for other sorting options
         }
@@ -106,13 +119,15 @@
             </div>
             <table>
                 <tr id = "tableheader">
-                    <th><button type = "submit" name = "sortID">ID <i class = "fa fa-sort"></i></button></th>
-                    <th><button type = "submit" name = "sortName">Applicants <i class = "fa fa-sort"></i></button></th>
-                    <th><button type = "submit" name = "sortAge">Age <i class = "fa fa-sort"></i></button></th>
-                    <th><button type = "submit" name = "sortJob">Preferred Job <i class = "fa fa-sort"></i></button></th>
-                    <th><button type = "submit" name = "sortAdd">Address <i class = "fa fa-sort"></i></button></th>
-                    <th><button type = "submit" name = "sortStatus">Status <i class = "fa fa-sort"></i></button></th>
-                    <th>More/Edit</th>
+                    <?php 
+                    echo "<th><button type = 'submit' name = 'sortID' id = $currentID>ID <i class = 'fa fa-sort'></i></button></th>
+                    <th><button type = 'submit' name = 'sortName' id = $currentApplicants>Applicants <i class = 'fa fa-sort'></i></button></th>
+                    <th><button type = 'submit' name = 'sortAge' id = $currentAge>Age <i class = 'fa fa-sort'></i></button></th>
+                    <th><button type = 'submit' name = 'sortJob' id = $currentJob>Preferred Job <i class = 'fa fa-sort'></i></button></th>
+                    <th><button type = 'submit' name = 'sortAdd' id = $currentAddress>Address <i class = 'fa fa-sort'></i></button></th>
+                    <th><button type = 'submit' name = 'sortStatus' id = $currentStatus>Status <i class = 'fa fa-sort'></i></button></th>
+                    <th>More/Edit</th>"
+                    ?>
                     <th>Delete</th>
                 </tr>
                     <?php
