@@ -52,7 +52,7 @@
         $currentStatus = 'unactive';
         if($_SERVER["REQUEST_METHOD"] != "POST"){
             $sql_query = "SELECT * FROM $sql_table";
-            $currentID = 'active';
+            $currentID = 'activeASC';
             $_SESSION["currentSort"] = "sortID";
             $_SESSION["sortOrder"] = "ASC";
         } else {
