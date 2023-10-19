@@ -111,12 +111,12 @@
             } elseif (isset($_POST["sortAdd"])) {
                 // Sort by Address, toggle ascending and descending order
                 if(isset($_SESSION["currentSort"]) && $_SESSION["currentSort"] == "sortAdd" && $_SESSION["sortOrder"] == "ASC"){
-                    $sql_query = "SELECT * FROM $sql_table ORDER BY State, PostCode DESC";
+                    $sql_query = "SELECT * FROM $sql_table ORDER BY SuburbOrTown, State, PostCode DESC";
                     $currentAddress = 'activeDESC';
                     $_SESSION["currentSort"] = "sortAdd";
                     $_SESSION["sortOrder"] = "DESC";
                 } else {
-                    $sql_query = "SELECT * FROM $sql_table ORDER BY State, PostCode ASC";
+                    $sql_query = "SELECT * FROM $sql_table ORDER BY SuburbOrTown, State, PostCode ASC";
                     $currentAddress = 'activeASC';
                     $_SESSION["currentSort"] = "sortAdd";
                     $_SESSION["sortOrder"] = "ASC";
@@ -156,17 +156,17 @@
                         <option value = "00100">00100</option>
                         <option value = "00101">00101</option>
                     </select>
-                    <button type = "submit" name = "deleteJobRefNum">Remove Records</button> 
+                    <button type = "submit" name = "deleteJobRefNum">Remove Records</button>
                 </div>
                 <div id = "searchQuery">
                     <label for = "search">Field</label>
-                    <select id = "search" name = "SearchCriteria">
+                    <select id = "search" name = "JobRefNum">
                         <option value = "all">All</option>
-                        <option value = "JobRefNum">Job Reference</option>
-                        <option value = "FirstName">First Name</option>
-                        <option value = "LastName">Last Name</option>
-                        <option value = "FullName">Full Name</option>
-                        <option value = "Status">Status</option>
+                        <option value = "jobrefnum">Job Reference</option>
+                        <option value = "firstname">First Name</option>
+                        <option value = "lastname">Last Name</option>
+                        <option value = "fullname">Full Name</option>
+                        <option value = "status">Status</option>
                     </select>
                     <label for = "searchquery">Search</label>
                     <input type = "text" id = "searchquery" name = "searchquery" placeholder = "Search...">
@@ -220,13 +220,29 @@
                                 
                                 $dob = $row['DateOfBirth'];
                                 $age = date_diff(date_create($dob), date_create('now'))->y;
-
+                                
                                 $reference = $row['JobRefNum'];
-                                if($reference == "00001") $jobTitle = "Software Developer";
-                                elseif($reference == "00010") $jobTitle = "Network Administrator";
-                                elseif($reference == "00011") $jobTitle = "Cyber Security Analyst";
-                                elseif($reference == "00100") $jobTitle = "IT Project Manager";
-                                elseif($reference == "00101") $jobTitle = "Data Analyst";
+                                $jobTitle = "";
+
+                                $sql_query2 = "SELECT * FROM jobs";
+                                $result2 = mysqli_query($conn, $sql_query2);
+                                $referenceNumbers = [];
+                                $jobTitles = [];
+                                while ($row2 = mysqli_fetch_assoc($result2)) {
+                                    $ref = $row2['JobRefNum'];
+                                    $jobtitle = $row2['JobTitle'];
+                                    array_push($referenceNumbers, $ref);
+                                    array_push($jobTitles, $jobtitle);
+                                }
+                        
+                                for ($i = 0; $i < count($referenceNumbers); $i ++){
+                                    if ($reference == $referenceNumbers[$i]){
+                                        $jobTitle = $jobTitles[$i];
+                                    }
+                                }
+                                if ($jobTitle == ""){
+                                    $jobTitle = "No job in table";
+                                }
 
                                 $streetAddress = $row['StreetAddress'];
                                 $addressInfo = $row['SuburbOrTown'] . ", " . $row['State'] . ", " . $row['PostCode'];
