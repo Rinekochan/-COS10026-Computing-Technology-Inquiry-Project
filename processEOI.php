@@ -318,7 +318,7 @@
                         <h3>Your EOI Number is <span style = 'color: #f22800; font-weight: bold;'>#$last_id</span>, and your email address is <span style = 'color: #f22800; font-weight: bold;'>$email</span></h3>
                         <p>A confirmation email has been sent to your email address.</p>
                         <p>If you don't see the email, please check your spam folder or verify your submitted email address.</p>
-                        <p>If the issue stills persist, please contact hpminquiry@gmail.com</p>.
+                        <p>If the issue stills persist, please contact hpminquiry@gmail.com.</p>
                         <a href = 'apply.php'>Back To Apply</a>
                     </div>
                     ";

@@ -114,7 +114,7 @@
             $mail->Username   = 'hpminquiry@gmail.com';                     //SMTP username
             $mail->Password   = 'igdmzvjikrdjqyey';                               //SMTP password
             $mail->SMTPSecure = 'tls';
-            $mail->Port       = 25;                      //587 25               
+            $mail->Port       = 587;                      //587 25               
             $mail->SMTPOptions = array(
                 'ssl' => array(
                     'verify_peer' => false,

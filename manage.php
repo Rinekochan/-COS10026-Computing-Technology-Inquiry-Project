@@ -111,12 +111,12 @@
             } elseif (isset($_POST["sortAdd"])) {
                 // Sort by Address, toggle ascending and descending order
                 if(isset($_SESSION["currentSort"]) && $_SESSION["currentSort"] == "sortAdd" && $_SESSION["sortOrder"] == "ASC"){
-                    $sql_query = "SELECT * FROM $sql_table ORDER BY SuburbOrTown, State, PostCode DESC";
+                    $sql_query = "SELECT * FROM $sql_table ORDER BY State, PostCode DESC";
                     $currentAddress = 'activeDESC';
                     $_SESSION["currentSort"] = "sortAdd";
                     $_SESSION["sortOrder"] = "DESC";
                 } else {
-                    $sql_query = "SELECT * FROM $sql_table ORDER BY SuburbOrTown, State, PostCode ASC";
+                    $sql_query = "SELECT * FROM $sql_table ORDER BY State, PostCode ASC";
                     $currentAddress = 'activeASC';
                     $_SESSION["currentSort"] = "sortAdd";
                     $_SESSION["sortOrder"] = "ASC";
@@ -156,17 +156,17 @@
                         <option value = "00100">00100</option>
                         <option value = "00101">00101</option>
                     </select>
-                    <button type = "submit" name = "deleteJobRefNum">Remove Records</button>
+                    <button type = "submit" name = "deleteJobRefNum">Remove Records</button> 
                 </div>
                 <div id = "searchQuery">
                     <label for = "search">Field</label>
-                    <select id = "search" name = "JobRefNum">
+                    <select id = "search" name = "SearchCriteria">
                         <option value = "all">All</option>
-                        <option value = "jobrefnum">Job Reference</option>
-                        <option value = "firstname">First Name</option>
-                        <option value = "lastname">Last Name</option>
-                        <option value = "fullname">Full Name</option>
-                        <option value = "status">Status</option>
+                        <option value = "JobRefNum">Job Reference</option>
+                        <option value = "FirstName">First Name</option>
+                        <option value = "LastName">Last Name</option>
+                        <option value = "FullName">Full Name</option>
+                        <option value = "Status">Status</option>
                     </select>
                     <label for = "searchquery">Search</label>
                     <input type = "text" id = "searchquery" name = "searchquery" placeholder = "Search...">
