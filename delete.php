@@ -46,7 +46,6 @@
             $query = "DELETE FROM $sql_table WHERE $sql_column = $id";
 
             $result = mysqli_query($conn, $query);
-            $check_row = mysqli_num_rows($result);
             if(!$result){
                 echo '
                 <div id = "errorMessage">
@@ -58,18 +57,13 @@
                 </div>
                 ';
             }else{
-                if($check_row != 0){
-                    echo "
-                    <div id = 'successMessage'>
-                        <h1>Success!</h1>
-                        <h2>You have succesfully delete the record</h2>
-                        <h3>Your deleted record EOI number is <span style = 'color: #f22800; font-weight: bold;'>#$id</span></h3>
-                        <a href = 'manage.php'>Back To Manage</a>
-                    </div>";
-                }else{
-                    mysqli_close($conn);
-                    header("Location: manage.php");
-                } 
+                echo "
+                <div id = 'successMessage'>
+                    <h1>Success!</h1>
+                    <h2>You have succesfully delete the record</h2>
+                    <h3>Your deleted record EOI number is <span style = 'color: #f22800; font-weight: bold;'>#$id</span></h3>
+                    <a href = 'manage.php'>Back To Manage</a>
+                </div>";
             }
             mysqli_close($conn);
         }catch(Exception $e) {
