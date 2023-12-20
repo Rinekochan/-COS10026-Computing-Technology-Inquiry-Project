@@ -1,4 +1,4 @@
-# Welcome to StackEdCOS10026-Computing Technology Inquiry Project 
+# Welcome to COS10026-Computing Technology Inquiry Project 
 
 ### Team Members:
 1.  Viet Hoang Pham (Leader)
