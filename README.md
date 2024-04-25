@@ -1,4 +1,4 @@
-# Welcome to COS10026-Computing Technology Inquiry Project 
+# Welcome to HI
 
 ### Team Members:
 1.  Viet Hoang Pham (Leader)
