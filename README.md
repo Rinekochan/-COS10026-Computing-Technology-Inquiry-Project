@@ -1,4 +1,4 @@
-# Welcome to HI
+# Welcome to Hi
 
 ### Team Members:
 1.  Viet Hoang Pham (Leader)
