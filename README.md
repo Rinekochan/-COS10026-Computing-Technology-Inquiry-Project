@@ -1,4 +1,6 @@
-# Welcome to our HPM website project created at Swinburne University of Technology in Australia
+# Welcome to our HPM website project
+
+## This group project created an online application website for companies
 
 ### Team Members:
 1.  Viet Hoang Pham (Leader)
