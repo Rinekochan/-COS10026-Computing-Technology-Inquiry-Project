@@ -1,6 +1,6 @@
 # Welcome to our HPM website project
 
-### This group project created an online application website for companies.
+### This group project created an job application platform website for companies.
 
 ### Team Members:
 1.  Viet Hoang Pham (Leader)
