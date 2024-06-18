@@ -13,5 +13,7 @@
 * Implemented a "Back to Top" button and animations using CSS for intuitive navigation and visual appeal, coupled with responsive design and a Hamburger Menu Bar on mobile screens for enhanced usability.
 * Employed PHP and MySQL for the back-end, enabling functionalities such as data validation and sanitization on the ProcessEOI Page, user authentication via Login/Register Page, application tracking on the Dashboard Page, and comprehensive * application management on the Manage, Jobs List, and Add Jobs Pages.
 * Strengthened security measures with HTML form validation, escape sanitization, and MD5 Encryption to protect against XSS and SQL Injection attacks, alongside automatic access blocking and a secure logout feature to safeguard manager credentials and user data integrity.
+
+### Walkthrough videos
 Front-end Video: https://youtu.be/pqaZKxT5mbs
 Back-end Video: https://youtu.be/hQJzTHE-_Os
